@@ -131,13 +131,6 @@ typedef interface ID3D12PipelineState ID3D12PipelineState;
 #endif 	/* __ID3D12PipelineState_FWD_DEFINED__ */
 
 
-#ifndef __ID3D12PipelineState1_FWD_DEFINED__
-#define __ID3D12PipelineState1_FWD_DEFINED__
-typedef interface ID3D12PipelineState1 ID3D12PipelineState1;
-
-#endif 	/* __ID3D12PipelineState1_FWD_DEFINED__ */
-
-
 #ifndef __ID3D12DescriptorHeap_FWD_DEFINED__
 #define __ID3D12DescriptorHeap_FWD_DEFINED__
 typedef interface ID3D12DescriptorHeap ID3D12DescriptorHeap;
@@ -194,11 +187,11 @@ typedef interface ID3D12CommandQueue ID3D12CommandQueue;
 #endif 	/* __ID3D12CommandQueue_FWD_DEFINED__ */
 
 
-#ifndef __ID3D12CommandQueue1_FWD_DEFINED__
-#define __ID3D12CommandQueue1_FWD_DEFINED__
-typedef interface ID3D12CommandQueue1 ID3D12CommandQueue1;
+#ifndef __ID3D12CommandQueueDynamicPriorityPreview_FWD_DEFINED__
+#define __ID3D12CommandQueueDynamicPriorityPreview_FWD_DEFINED__
+typedef interface ID3D12CommandQueueDynamicPriorityPreview ID3D12CommandQueueDynamicPriorityPreview;
 
-#endif 	/* __ID3D12CommandQueue1_FWD_DEFINED__ */
+#endif 	/* __ID3D12CommandQueueDynamicPriorityPreview_FWD_DEFINED__ */
 
 
 #ifndef __ID3D12Device_FWD_DEFINED__
@@ -306,18 +299,18 @@ typedef interface ID3D12StateObjectProperties1 ID3D12StateObjectProperties1;
 #endif 	/* __ID3D12StateObjectProperties1_FWD_DEFINED__ */
 
 
-#ifndef __ID3D12StateObjectProperties2_FWD_DEFINED__
-#define __ID3D12StateObjectProperties2_FWD_DEFINED__
-typedef interface ID3D12StateObjectProperties2 ID3D12StateObjectProperties2;
-
-#endif 	/* __ID3D12StateObjectProperties2_FWD_DEFINED__ */
-
-
 #ifndef __ID3D12WorkGraphProperties_FWD_DEFINED__
 #define __ID3D12WorkGraphProperties_FWD_DEFINED__
 typedef interface ID3D12WorkGraphProperties ID3D12WorkGraphProperties;
 
 #endif 	/* __ID3D12WorkGraphProperties_FWD_DEFINED__ */
+
+
+#ifndef __ID3D12WorkGraphProperties1_FWD_DEFINED__
+#define __ID3D12WorkGraphProperties1_FWD_DEFINED__
+typedef interface ID3D12WorkGraphProperties1 ID3D12WorkGraphProperties1;
+
+#endif 	/* __ID3D12WorkGraphProperties1_FWD_DEFINED__ */
 
 
 #ifndef __ID3D12Device5_FWD_DEFINED__
@@ -488,13 +481,6 @@ typedef interface ID3D12Device14 ID3D12Device14;
 #endif 	/* __ID3D12Device14_FWD_DEFINED__ */
 
 
-#ifndef __ID3D12StateObjectDatabase_FWD_DEFINED__
-#define __ID3D12StateObjectDatabase_FWD_DEFINED__
-typedef interface ID3D12StateObjectDatabase ID3D12StateObjectDatabase;
-
-#endif 	/* __ID3D12StateObjectDatabase_FWD_DEFINED__ */
-
-
 #ifndef __ID3D12VirtualizationGuestDevice_FWD_DEFINED__
 #define __ID3D12VirtualizationGuestDevice_FWD_DEFINED__
 typedef interface ID3D12VirtualizationGuestDevice ID3D12VirtualizationGuestDevice;
@@ -579,13 +565,6 @@ typedef interface ID3D12DeviceConfiguration1 ID3D12DeviceConfiguration1;
 #endif 	/* __ID3D12DeviceConfiguration1_FWD_DEFINED__ */
 
 
-#ifndef __ID3D12StateObjectDatabaseFactory_FWD_DEFINED__
-#define __ID3D12StateObjectDatabaseFactory_FWD_DEFINED__
-typedef interface ID3D12StateObjectDatabaseFactory ID3D12StateObjectDatabaseFactory;
-
-#endif 	/* __ID3D12StateObjectDatabaseFactory_FWD_DEFINED__ */
-
-
 #ifndef __ID3D12GraphicsCommandList5_FWD_DEFINED__
 #define __ID3D12GraphicsCommandList5_FWD_DEFINED__
 typedef interface ID3D12GraphicsCommandList5 ID3D12GraphicsCommandList5;
@@ -626,6 +605,20 @@ typedef interface ID3D12GraphicsCommandList9 ID3D12GraphicsCommandList9;
 typedef interface ID3D12GraphicsCommandList10 ID3D12GraphicsCommandList10;
 
 #endif 	/* __ID3D12GraphicsCommandList10_FWD_DEFINED__ */
+
+
+#ifndef __ID3D12DevicePreview_FWD_DEFINED__
+#define __ID3D12DevicePreview_FWD_DEFINED__
+typedef interface ID3D12DevicePreview ID3D12DevicePreview;
+
+#endif 	/* __ID3D12DevicePreview_FWD_DEFINED__ */
+
+
+#ifndef __ID3D12GraphicsCommandListPreview_FWD_DEFINED__
+#define __ID3D12GraphicsCommandListPreview_FWD_DEFINED__
+typedef interface ID3D12GraphicsCommandListPreview ID3D12GraphicsCommandListPreview;
+
+#endif 	/* __ID3D12GraphicsCommandListPreview_FWD_DEFINED__ */
 
 
 #ifndef __ID3D12DSRDeviceFactory_FWD_DEFINED__
@@ -1311,7 +1304,7 @@ extern "C"{
 
 #define	D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT	( 2 )
 
-#define	D3D12_SDK_VERSION	( 618 )
+#define	D3D12_SDK_VERSION	( 616 )
 
 #define	D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES	( 32 )
 
@@ -1409,9 +1402,9 @@ extern "C"{
 
 #define	D3D12_TEXTURE_DATA_PLACEMENT_ALIGNMENT	( 512 )
 
-#define	D3D12_TIGHT_ALIGNMENT_MIN_COMMITTED_RESOURCE_ALIGNMENT	( 4096 )
+#define	D3D12_TIGHT_ALIGNMENT_MIN_COMMITTED_RESOURCE_ALIGNEMNT	( 4096 )
 
-#define	D3D12_TIGHT_ALIGNMENT_MIN_PLACED_RESOURCE_ALIGNMENT	( 8 )
+#define	D3D12_TIGHT_ALIGNMENT_MIN_PLACED_RESOURCE_ALIGNEMNT	( 8 )
 
 #define	D3D12_TILED_RESOURCE_TILE_SIZE_IN_BYTES	( 65536 )
 
@@ -2376,23 +2369,6 @@ enum D3D_ROOT_SIGNATURE_VERSION
         D3D_ROOT_SIGNATURE_VERSION_1_2	= 0x3
     } 	D3D_ROOT_SIGNATURE_VERSION;
 
-typedef struct D3D12_SERIALIZED_ROOT_SIGNATURE_DESC
-    {
-    /* [annotation] */ 
-    _Field_size_bytes_full_(SerializedBlobSizeInBytes)  const void *pSerializedBlob;
-    SIZE_T SerializedBlobSizeInBytes;
-    } 	D3D12_SERIALIZED_ROOT_SIGNATURE_DESC;
-
-typedef struct D3D12_GLOBAL_SERIALIZED_ROOT_SIGNATURE
-    {
-    D3D12_SERIALIZED_ROOT_SIGNATURE_DESC Desc;
-    } 	D3D12_GLOBAL_SERIALIZED_ROOT_SIGNATURE;
-
-typedef struct D3D12_LOCAL_SERIALIZED_ROOT_SIGNATURE
-    {
-    D3D12_SERIALIZED_ROOT_SIGNATURE_DESC Desc;
-    } 	D3D12_LOCAL_SERIALIZED_ROOT_SIGNATURE;
-
 struct D3D12_RT_FORMAT_ARRAY
     {
     DXGI_FORMAT RTFormats[ 8 ];
@@ -2437,8 +2413,7 @@ enum D3D12_PIPELINE_STATE_SUBOBJECT_TYPE
         D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL2	= 26,
         D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_RASTERIZER1	= 27,
         D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_RASTERIZER2	= 28,
-        D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_SERIALIZED_ROOT_SIGNATURE	= 29,
-        D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MAX_VALID	= ( D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_SERIALIZED_ROOT_SIGNATURE + 1 ) 
+        D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MAX_VALID	= ( D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_RASTERIZER2 + 1 ) 
     } 	D3D12_PIPELINE_STATE_SUBOBJECT_TYPE;
 
 typedef 
@@ -2453,8 +2428,11 @@ enum D3D12_FEATURE
         D3D12_FEATURE_GPU_VIRTUAL_ADDRESS_SUPPORT	= 6,
         D3D12_FEATURE_SHADER_MODEL	= 7,
         D3D12_FEATURE_D3D12_OPTIONS1	= 8,
+        D3D12_FEATURE_D3D12_OPTIONS_EXPERIMENTAL	= 9,
         D3D12_FEATURE_PROTECTED_RESOURCE_SESSION_SUPPORT	= 10,
+        D3D12_FEATURE_COOPERATIVE_VECTOR	= 11,
         D3D12_FEATURE_ROOT_SIGNATURE	= 12,
+        D3D12_FEATURE_D3D12_OPTIONS_EXPERIMENTAL1	= 13,
         D3D12_FEATURE_ARCHITECTURE1	= 16,
         D3D12_FEATURE_D3D12_OPTIONS2	= 18,
         D3D12_FEATURE_SHADER_CACHE	= 19,
@@ -2491,7 +2469,7 @@ enum D3D12_FEATURE
         D3D12_FEATURE_D3D12_TIGHT_ALIGNMENT	= 54,
         D3D12_FEATURE_APPLICATION_SPECIFIC_DRIVER_STATE	= 56,
         D3D12_FEATURE_BYTECODE_BYPASS_HASH_SUPPORTED	= 57,
-        D3D12_FEATURE_SHADER_CACHE_ABI_SUPPORT	= 61
+        D3D12_FEATURE_HARDWARE_SCHEDULING_QUEUE_GROUPINGS	= 60
     } 	D3D12_FEATURE;
 
 typedef 
@@ -2581,8 +2559,7 @@ enum D3D12_FORMAT_SUPPORT2
         D3D12_FORMAT_SUPPORT2_OUTPUT_MERGER_LOGIC_OP	= 0x100,
         D3D12_FORMAT_SUPPORT2_TILED	= 0x200,
         D3D12_FORMAT_SUPPORT2_MULTIPLANE_OVERLAY	= 0x4000,
-        D3D12_FORMAT_SUPPORT2_SAMPLER_FEEDBACK	= 0x8000,
-        D3D12_FORMAT_SUPPORT2_DISPLAYABLE	= 0x10000
+        D3D12_FORMAT_SUPPORT2_SAMPLER_FEEDBACK	= 0x8000
     } 	D3D12_FORMAT_SUPPORT2;
 
 DEFINE_ENUM_FLAG_OPERATORS( D3D12_FORMAT_SUPPORT2 )
@@ -2632,7 +2609,8 @@ typedef
 enum D3D12_WORK_GRAPHS_TIER
     {
         D3D12_WORK_GRAPHS_TIER_NOT_SUPPORTED	= 0,
-        D3D12_WORK_GRAPHS_TIER_1_0	= 10
+        D3D12_WORK_GRAPHS_TIER_1_0	= 10,
+        D3D12_WORK_GRAPHS_TIER_1_1	= 11
     } 	D3D12_WORK_GRAPHS_TIER;
 
 typedef struct D3D12_FEATURE_DATA_D3D12_OPTIONS
@@ -6106,167 +6084,6 @@ EXTERN_C const IID IID_ID3D12PipelineState;
 #endif 	/* __ID3D12PipelineState_INTERFACE_DEFINED__ */
 
 
-#ifndef __ID3D12PipelineState1_INTERFACE_DEFINED__
-#define __ID3D12PipelineState1_INTERFACE_DEFINED__
-
-/* interface ID3D12PipelineState1 */
-/* [unique][local][object][uuid] */ 
-
-
-EXTERN_C const IID IID_ID3D12PipelineState1;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("5646804c-9638-48f7-9182-b3ee5a6b60fb")
-    ID3D12PipelineState1 : public ID3D12PipelineState
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetRootSignature( 
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvRootSignature) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct ID3D12PipelineState1Vtbl
-    {
-        BEGIN_INTERFACE
-        
-        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            ID3D12PipelineState1 * This,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        DECLSPEC_XFGVIRT(IUnknown, AddRef)
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            ID3D12PipelineState1 * This);
-        
-        DECLSPEC_XFGVIRT(IUnknown, Release)
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            ID3D12PipelineState1 * This);
-        
-        DECLSPEC_XFGVIRT(ID3D12Object, GetPrivateData)
-        HRESULT ( STDMETHODCALLTYPE *GetPrivateData )( 
-            ID3D12PipelineState1 * This,
-            /* [annotation] */ 
-            _In_  REFGUID guid,
-            /* [annotation] */ 
-            _Inout_  UINT *pDataSize,
-            /* [annotation] */ 
-            _Out_writes_bytes_opt_( *pDataSize )  void *pData);
-        
-        DECLSPEC_XFGVIRT(ID3D12Object, SetPrivateData)
-        HRESULT ( STDMETHODCALLTYPE *SetPrivateData )( 
-            ID3D12PipelineState1 * This,
-            /* [annotation] */ 
-            _In_  REFGUID guid,
-            /* [annotation] */ 
-            _In_  UINT DataSize,
-            /* [annotation] */ 
-            _In_reads_bytes_opt_( DataSize )  const void *pData);
-        
-        DECLSPEC_XFGVIRT(ID3D12Object, SetPrivateDataInterface)
-        HRESULT ( STDMETHODCALLTYPE *SetPrivateDataInterface )( 
-            ID3D12PipelineState1 * This,
-            /* [annotation] */ 
-            _In_  REFGUID guid,
-            /* [annotation] */ 
-            _In_opt_  const IUnknown *pData);
-        
-        DECLSPEC_XFGVIRT(ID3D12Object, SetName)
-        HRESULT ( STDMETHODCALLTYPE *SetName )( 
-            ID3D12PipelineState1 * This,
-            /* [annotation] */ 
-            _In_z_  LPCWSTR Name);
-        
-        DECLSPEC_XFGVIRT(ID3D12DeviceChild, GetDevice)
-        HRESULT ( STDMETHODCALLTYPE *GetDevice )( 
-            ID3D12PipelineState1 * This,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_opt_  void **ppvDevice);
-        
-        DECLSPEC_XFGVIRT(ID3D12PipelineState, GetCachedBlob)
-        HRESULT ( STDMETHODCALLTYPE *GetCachedBlob )( 
-            ID3D12PipelineState1 * This,
-            /* [annotation] */ 
-            _COM_Outptr_  ID3DBlob **ppBlob);
-        
-        DECLSPEC_XFGVIRT(ID3D12PipelineState1, GetRootSignature)
-        HRESULT ( STDMETHODCALLTYPE *GetRootSignature )( 
-            ID3D12PipelineState1 * This,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvRootSignature);
-        
-        END_INTERFACE
-    } ID3D12PipelineState1Vtbl;
-
-    interface ID3D12PipelineState1
-    {
-        CONST_VTBL struct ID3D12PipelineState1Vtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define ID3D12PipelineState1_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define ID3D12PipelineState1_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define ID3D12PipelineState1_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define ID3D12PipelineState1_GetPrivateData(This,guid,pDataSize,pData)	\
-    ( (This)->lpVtbl -> GetPrivateData(This,guid,pDataSize,pData) ) 
-
-#define ID3D12PipelineState1_SetPrivateData(This,guid,DataSize,pData)	\
-    ( (This)->lpVtbl -> SetPrivateData(This,guid,DataSize,pData) ) 
-
-#define ID3D12PipelineState1_SetPrivateDataInterface(This,guid,pData)	\
-    ( (This)->lpVtbl -> SetPrivateDataInterface(This,guid,pData) ) 
-
-#define ID3D12PipelineState1_SetName(This,Name)	\
-    ( (This)->lpVtbl -> SetName(This,Name) ) 
-
-
-#define ID3D12PipelineState1_GetDevice(This,riid,ppvDevice)	\
-    ( (This)->lpVtbl -> GetDevice(This,riid,ppvDevice) ) 
-
-
-
-#define ID3D12PipelineState1_GetCachedBlob(This,ppBlob)	\
-    ( (This)->lpVtbl -> GetCachedBlob(This,ppBlob) ) 
-
-
-#define ID3D12PipelineState1_GetRootSignature(This,riid,ppvRootSignature)	\
-    ( (This)->lpVtbl -> GetRootSignature(This,riid,ppvRootSignature) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* __ID3D12PipelineState1_INTERFACE_DEFINED__ */
-
-
 #ifndef __ID3D12DescriptorHeap_INTERFACE_DEFINED__
 #define __ID3D12DescriptorHeap_INTERFACE_DEFINED__
 
@@ -8968,7 +8785,7 @@ EXTERN_C const IID IID_ID3D12GraphicsCommandList1;
 #endif 	/* __ID3D12GraphicsCommandList1_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0019 */
+/* interface __MIDL_itf_d3d12_0000_0018 */
 /* [local] */ 
 
 typedef struct D3D12_WRITEBUFFERIMMEDIATE_PARAMETER
@@ -8987,8 +8804,8 @@ enum D3D12_WRITEBUFFERIMMEDIATE_MODE
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0018_v0_0_s_ifspec;
 
 #ifndef __ID3D12GraphicsCommandList2_INTERFACE_DEFINED__
 #define __ID3D12GraphicsCommandList2_INTERFACE_DEFINED__
@@ -10227,7 +10044,7 @@ void __RPC_STUB ID3D12CommandQueue_GetDesc_Stub(
 #endif 	/* __ID3D12CommandQueue_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0021 */
+/* interface __MIDL_itf_d3d12_0000_0020 */
 /* [local] */ 
 
 typedef struct D3D12_FEATURE_DATA_HARDWARE_SCHEDULING_QUEUE_GROUPINGS
@@ -10268,22 +10085,22 @@ enum D3D12_COMMAND_QUEUE_GLOBAL_PRIORITY
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0020_v0_0_s_ifspec;
 
-#ifndef __ID3D12CommandQueue1_INTERFACE_DEFINED__
-#define __ID3D12CommandQueue1_INTERFACE_DEFINED__
+#ifndef __ID3D12CommandQueueDynamicPriorityPreview_INTERFACE_DEFINED__
+#define __ID3D12CommandQueueDynamicPriorityPreview_INTERFACE_DEFINED__
 
-/* interface ID3D12CommandQueue1 */
+/* interface ID3D12CommandQueueDynamicPriorityPreview */
 /* [unique][local][object][uuid] */ 
 
 
-EXTERN_C const IID IID_ID3D12CommandQueue1;
+EXTERN_C const IID IID_ID3D12CommandQueueDynamicPriorityPreview;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("3a3c3165-0ee7-4b8e-a0af-6356b4c3bbb9")
-    ID3D12CommandQueue1 : public ID3D12CommandQueue
+    MIDL_INTERFACE("6ae3aa59-406b-47c6-ba10-703a6a2054c2")
+    ID3D12CommandQueueDynamicPriorityPreview : public IUnknown
     {
     public:
         virtual HRESULT STDMETHODCALLTYPE SetProcessPriority( 
@@ -10303,13 +10120,13 @@ EXTERN_C const IID IID_ID3D12CommandQueue1;
     
 #else 	/* C style interface */
 
-    typedef struct ID3D12CommandQueue1Vtbl
+    typedef struct ID3D12CommandQueueDynamicPriorityPreviewVtbl
     {
         BEGIN_INTERFACE
         
         DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            ID3D12CommandQueue1 * This,
+            ID3D12CommandQueueDynamicPriorityPreview * This,
             /* [annotation][in] */ 
             _In_  REFIID riid,
             /* [annotation][iid_is][out] */ 
@@ -10317,174 +10134,38 @@ EXTERN_C const IID IID_ID3D12CommandQueue1;
         
         DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            ID3D12CommandQueue1 * This);
+            ID3D12CommandQueueDynamicPriorityPreview * This);
         
         DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
-            ID3D12CommandQueue1 * This);
+            ID3D12CommandQueueDynamicPriorityPreview * This);
         
-        DECLSPEC_XFGVIRT(ID3D12Object, GetPrivateData)
-        HRESULT ( STDMETHODCALLTYPE *GetPrivateData )( 
-            ID3D12CommandQueue1 * This,
-            /* [annotation] */ 
-            _In_  REFGUID guid,
-            /* [annotation] */ 
-            _Inout_  UINT *pDataSize,
-            /* [annotation] */ 
-            _Out_writes_bytes_opt_( *pDataSize )  void *pData);
-        
-        DECLSPEC_XFGVIRT(ID3D12Object, SetPrivateData)
-        HRESULT ( STDMETHODCALLTYPE *SetPrivateData )( 
-            ID3D12CommandQueue1 * This,
-            /* [annotation] */ 
-            _In_  REFGUID guid,
-            /* [annotation] */ 
-            _In_  UINT DataSize,
-            /* [annotation] */ 
-            _In_reads_bytes_opt_( DataSize )  const void *pData);
-        
-        DECLSPEC_XFGVIRT(ID3D12Object, SetPrivateDataInterface)
-        HRESULT ( STDMETHODCALLTYPE *SetPrivateDataInterface )( 
-            ID3D12CommandQueue1 * This,
-            /* [annotation] */ 
-            _In_  REFGUID guid,
-            /* [annotation] */ 
-            _In_opt_  const IUnknown *pData);
-        
-        DECLSPEC_XFGVIRT(ID3D12Object, SetName)
-        HRESULT ( STDMETHODCALLTYPE *SetName )( 
-            ID3D12CommandQueue1 * This,
-            /* [annotation] */ 
-            _In_z_  LPCWSTR Name);
-        
-        DECLSPEC_XFGVIRT(ID3D12DeviceChild, GetDevice)
-        HRESULT ( STDMETHODCALLTYPE *GetDevice )( 
-            ID3D12CommandQueue1 * This,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_opt_  void **ppvDevice);
-        
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue, UpdateTileMappings)
-        void ( STDMETHODCALLTYPE *UpdateTileMappings )( 
-            ID3D12CommandQueue1 * This,
-            /* [annotation] */ 
-            _In_  ID3D12Resource *pResource,
-            UINT NumResourceRegions,
-            /* [annotation] */ 
-            _In_reads_opt_(NumResourceRegions)  const D3D12_TILED_RESOURCE_COORDINATE *pResourceRegionStartCoordinates,
-            /* [annotation] */ 
-            _In_reads_opt_(NumResourceRegions)  const D3D12_TILE_REGION_SIZE *pResourceRegionSizes,
-            /* [annotation] */ 
-            _In_opt_  ID3D12Heap *pHeap,
-            UINT NumRanges,
-            /* [annotation] */ 
-            _In_reads_opt_(NumRanges)  const D3D12_TILE_RANGE_FLAGS *pRangeFlags,
-            /* [annotation] */ 
-            _In_reads_opt_(NumRanges)  const UINT *pHeapRangeStartOffsets,
-            /* [annotation] */ 
-            _In_reads_opt_(NumRanges)  const UINT *pRangeTileCounts,
-            D3D12_TILE_MAPPING_FLAGS Flags);
-        
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue, CopyTileMappings)
-        void ( STDMETHODCALLTYPE *CopyTileMappings )( 
-            ID3D12CommandQueue1 * This,
-            /* [annotation] */ 
-            _In_  ID3D12Resource *pDstResource,
-            /* [annotation] */ 
-            _In_  const D3D12_TILED_RESOURCE_COORDINATE *pDstRegionStartCoordinate,
-            /* [annotation] */ 
-            _In_  ID3D12Resource *pSrcResource,
-            /* [annotation] */ 
-            _In_  const D3D12_TILED_RESOURCE_COORDINATE *pSrcRegionStartCoordinate,
-            /* [annotation] */ 
-            _In_  const D3D12_TILE_REGION_SIZE *pRegionSize,
-            D3D12_TILE_MAPPING_FLAGS Flags);
-        
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue, ExecuteCommandLists)
-        void ( STDMETHODCALLTYPE *ExecuteCommandLists )( 
-            ID3D12CommandQueue1 * This,
-            /* [annotation] */ 
-            _In_  UINT NumCommandLists,
-            /* [annotation] */ 
-            _In_reads_(NumCommandLists)  ID3D12CommandList *const *ppCommandLists);
-        
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue, SetMarker)
-        void ( STDMETHODCALLTYPE *SetMarker )( 
-            ID3D12CommandQueue1 * This,
-            UINT Metadata,
-            /* [annotation] */ 
-            _In_reads_bytes_opt_(Size)  const void *pData,
-            UINT Size);
-        
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue, BeginEvent)
-        void ( STDMETHODCALLTYPE *BeginEvent )( 
-            ID3D12CommandQueue1 * This,
-            UINT Metadata,
-            /* [annotation] */ 
-            _In_reads_bytes_opt_(Size)  const void *pData,
-            UINT Size);
-        
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue, EndEvent)
-        void ( STDMETHODCALLTYPE *EndEvent )( 
-            ID3D12CommandQueue1 * This);
-        
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue, Signal)
-        HRESULT ( STDMETHODCALLTYPE *Signal )( 
-            ID3D12CommandQueue1 * This,
-            ID3D12Fence *pFence,
-            UINT64 Value);
-        
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue, Wait)
-        HRESULT ( STDMETHODCALLTYPE *Wait )( 
-            ID3D12CommandQueue1 * This,
-            ID3D12Fence *pFence,
-            UINT64 Value);
-        
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue, GetTimestampFrequency)
-        HRESULT ( STDMETHODCALLTYPE *GetTimestampFrequency )( 
-            ID3D12CommandQueue1 * This,
-            /* [annotation] */ 
-            _Out_  UINT64 *pFrequency);
-        
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue, GetClockCalibration)
-        HRESULT ( STDMETHODCALLTYPE *GetClockCalibration )( 
-            ID3D12CommandQueue1 * This,
-            /* [annotation] */ 
-            _Out_  UINT64 *pGpuTimestamp,
-            /* [annotation] */ 
-            _Out_  UINT64 *pCpuTimestamp);
-        
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue, GetDesc)
-        D3D12_COMMAND_QUEUE_DESC ( STDMETHODCALLTYPE *GetDesc )( 
-            ID3D12CommandQueue1 * This);
-        
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue1, SetProcessPriority)
+        DECLSPEC_XFGVIRT(ID3D12CommandQueueDynamicPriorityPreview, SetProcessPriority)
         HRESULT ( STDMETHODCALLTYPE *SetProcessPriority )( 
-            ID3D12CommandQueue1 * This,
+            ID3D12CommandQueueDynamicPriorityPreview * This,
             D3D12_COMMAND_QUEUE_PROCESS_PRIORITY Priority);
         
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue1, GetProcessPriority)
+        DECLSPEC_XFGVIRT(ID3D12CommandQueueDynamicPriorityPreview, GetProcessPriority)
         HRESULT ( STDMETHODCALLTYPE *GetProcessPriority )( 
-            ID3D12CommandQueue1 * This,
+            ID3D12CommandQueueDynamicPriorityPreview * This,
             D3D12_COMMAND_QUEUE_PROCESS_PRIORITY *pOutValue);
         
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue1, SetGlobalPriority)
+        DECLSPEC_XFGVIRT(ID3D12CommandQueueDynamicPriorityPreview, SetGlobalPriority)
         HRESULT ( STDMETHODCALLTYPE *SetGlobalPriority )( 
-            ID3D12CommandQueue1 * This,
+            ID3D12CommandQueueDynamicPriorityPreview * This,
             D3D12_COMMAND_QUEUE_GLOBAL_PRIORITY Priority);
         
-        DECLSPEC_XFGVIRT(ID3D12CommandQueue1, GetGlobalPriority)
+        DECLSPEC_XFGVIRT(ID3D12CommandQueueDynamicPriorityPreview, GetGlobalPriority)
         HRESULT ( STDMETHODCALLTYPE *GetGlobalPriority )( 
-            ID3D12CommandQueue1 * This,
+            ID3D12CommandQueueDynamicPriorityPreview * This,
             D3D12_COMMAND_QUEUE_GLOBAL_PRIORITY *pOutValue);
         
         END_INTERFACE
-    } ID3D12CommandQueue1Vtbl;
+    } ID3D12CommandQueueDynamicPriorityPreviewVtbl;
 
-    interface ID3D12CommandQueue1
+    interface ID3D12CommandQueueDynamicPriorityPreview
     {
-        CONST_VTBL struct ID3D12CommandQueue1Vtbl *lpVtbl;
+        CONST_VTBL struct ID3D12CommandQueueDynamicPriorityPreviewVtbl *lpVtbl;
     };
 
     
@@ -10492,78 +10173,26 @@ EXTERN_C const IID IID_ID3D12CommandQueue1;
 #ifdef COBJMACROS
 
 
-#define ID3D12CommandQueue1_QueryInterface(This,riid,ppvObject)	\
+#define ID3D12CommandQueueDynamicPriorityPreview_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
-#define ID3D12CommandQueue1_AddRef(This)	\
+#define ID3D12CommandQueueDynamicPriorityPreview_AddRef(This)	\
     ( (This)->lpVtbl -> AddRef(This) ) 
 
-#define ID3D12CommandQueue1_Release(This)	\
+#define ID3D12CommandQueueDynamicPriorityPreview_Release(This)	\
     ( (This)->lpVtbl -> Release(This) ) 
 
 
-#define ID3D12CommandQueue1_GetPrivateData(This,guid,pDataSize,pData)	\
-    ( (This)->lpVtbl -> GetPrivateData(This,guid,pDataSize,pData) ) 
-
-#define ID3D12CommandQueue1_SetPrivateData(This,guid,DataSize,pData)	\
-    ( (This)->lpVtbl -> SetPrivateData(This,guid,DataSize,pData) ) 
-
-#define ID3D12CommandQueue1_SetPrivateDataInterface(This,guid,pData)	\
-    ( (This)->lpVtbl -> SetPrivateDataInterface(This,guid,pData) ) 
-
-#define ID3D12CommandQueue1_SetName(This,Name)	\
-    ( (This)->lpVtbl -> SetName(This,Name) ) 
-
-
-#define ID3D12CommandQueue1_GetDevice(This,riid,ppvDevice)	\
-    ( (This)->lpVtbl -> GetDevice(This,riid,ppvDevice) ) 
-
-
-
-#define ID3D12CommandQueue1_UpdateTileMappings(This,pResource,NumResourceRegions,pResourceRegionStartCoordinates,pResourceRegionSizes,pHeap,NumRanges,pRangeFlags,pHeapRangeStartOffsets,pRangeTileCounts,Flags)	\
-    ( (This)->lpVtbl -> UpdateTileMappings(This,pResource,NumResourceRegions,pResourceRegionStartCoordinates,pResourceRegionSizes,pHeap,NumRanges,pRangeFlags,pHeapRangeStartOffsets,pRangeTileCounts,Flags) ) 
-
-#define ID3D12CommandQueue1_CopyTileMappings(This,pDstResource,pDstRegionStartCoordinate,pSrcResource,pSrcRegionStartCoordinate,pRegionSize,Flags)	\
-    ( (This)->lpVtbl -> CopyTileMappings(This,pDstResource,pDstRegionStartCoordinate,pSrcResource,pSrcRegionStartCoordinate,pRegionSize,Flags) ) 
-
-#define ID3D12CommandQueue1_ExecuteCommandLists(This,NumCommandLists,ppCommandLists)	\
-    ( (This)->lpVtbl -> ExecuteCommandLists(This,NumCommandLists,ppCommandLists) ) 
-
-#define ID3D12CommandQueue1_SetMarker(This,Metadata,pData,Size)	\
-    ( (This)->lpVtbl -> SetMarker(This,Metadata,pData,Size) ) 
-
-#define ID3D12CommandQueue1_BeginEvent(This,Metadata,pData,Size)	\
-    ( (This)->lpVtbl -> BeginEvent(This,Metadata,pData,Size) ) 
-
-#define ID3D12CommandQueue1_EndEvent(This)	\
-    ( (This)->lpVtbl -> EndEvent(This) ) 
-
-#define ID3D12CommandQueue1_Signal(This,pFence,Value)	\
-    ( (This)->lpVtbl -> Signal(This,pFence,Value) ) 
-
-#define ID3D12CommandQueue1_Wait(This,pFence,Value)	\
-    ( (This)->lpVtbl -> Wait(This,pFence,Value) ) 
-
-#define ID3D12CommandQueue1_GetTimestampFrequency(This,pFrequency)	\
-    ( (This)->lpVtbl -> GetTimestampFrequency(This,pFrequency) ) 
-
-#define ID3D12CommandQueue1_GetClockCalibration(This,pGpuTimestamp,pCpuTimestamp)	\
-    ( (This)->lpVtbl -> GetClockCalibration(This,pGpuTimestamp,pCpuTimestamp) ) 
-
-#define ID3D12CommandQueue1_GetDesc(This)	\
-    ( (This)->lpVtbl -> GetDesc(This) ) 
-
-
-#define ID3D12CommandQueue1_SetProcessPriority(This,Priority)	\
+#define ID3D12CommandQueueDynamicPriorityPreview_SetProcessPriority(This,Priority)	\
     ( (This)->lpVtbl -> SetProcessPriority(This,Priority) ) 
 
-#define ID3D12CommandQueue1_GetProcessPriority(This,pOutValue)	\
+#define ID3D12CommandQueueDynamicPriorityPreview_GetProcessPriority(This,pOutValue)	\
     ( (This)->lpVtbl -> GetProcessPriority(This,pOutValue) ) 
 
-#define ID3D12CommandQueue1_SetGlobalPriority(This,Priority)	\
+#define ID3D12CommandQueueDynamicPriorityPreview_SetGlobalPriority(This,Priority)	\
     ( (This)->lpVtbl -> SetGlobalPriority(This,Priority) ) 
 
-#define ID3D12CommandQueue1_GetGlobalPriority(This,pOutValue)	\
+#define ID3D12CommandQueueDynamicPriorityPreview_GetGlobalPriority(This,pOutValue)	\
     ( (This)->lpVtbl -> GetGlobalPriority(This,pOutValue) ) 
 
 #endif /* COBJMACROS */
@@ -10574,7 +10203,7 @@ EXTERN_C const IID IID_ID3D12CommandQueue1;
 
 
 
-#endif 	/* __ID3D12CommandQueue1_INTERFACE_DEFINED__ */
+#endif 	/* __ID3D12CommandQueueDynamicPriorityPreview_INTERFACE_DEFINED__ */
 
 
 #ifndef __ID3D12Device_INTERFACE_DEFINED__
@@ -11990,7 +11619,7 @@ EXTERN_C const IID IID_ID3D12PipelineLibrary1;
 #endif 	/* __ID3D12PipelineLibrary1_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0025 */
+/* interface __MIDL_itf_d3d12_0000_0024 */
 /* [local] */ 
 
 typedef 
@@ -12014,8 +11643,8 @@ enum D3D12_RESIDENCY_PRIORITY
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0024_v0_0_s_ifspec;
 
 #ifndef __ID3D12Device1_INTERFACE_DEFINED__
 #define __ID3D12Device1_INTERFACE_DEFINED__
@@ -13382,7 +13011,7 @@ EXTERN_C const IID IID_ID3D12Device2;
 #endif 	/* __ID3D12Device2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0027 */
+/* interface __MIDL_itf_d3d12_0000_0026 */
 /* [local] */ 
 
 typedef 
@@ -13395,8 +13024,8 @@ enum D3D12_RESIDENCY_FLAGS
 DEFINE_ENUM_FLAG_OPERATORS( D3D12_RESIDENCY_FLAGS )
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0026_v0_0_s_ifspec;
 
 #ifndef __ID3D12Device3_INTERFACE_DEFINED__
 #define __ID3D12Device3_INTERFACE_DEFINED__
@@ -14137,7 +13766,7 @@ EXTERN_C const IID IID_ID3D12Device3;
 #endif 	/* __ID3D12Device3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0028 */
+/* interface __MIDL_itf_d3d12_0000_0027 */
 /* [local] */ 
 
 typedef 
@@ -14170,8 +13799,8 @@ enum D3D12_PROTECTED_SESSION_STATUS
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0027_v0_0_s_ifspec;
 
 #ifndef __ID3D12ProtectedSession_INTERFACE_DEFINED__
 #define __ID3D12ProtectedSession_INTERFACE_DEFINED__
@@ -14332,7 +13961,7 @@ EXTERN_C const IID IID_ID3D12ProtectedSession;
 #endif 	/* __ID3D12ProtectedSession_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0029 */
+/* interface __MIDL_itf_d3d12_0000_0028 */
 /* [local] */ 
 
 typedef 
@@ -14364,8 +13993,8 @@ typedef struct D3D12_PROTECTED_RESOURCE_SESSION_DESC
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0028_v0_0_s_ifspec;
 
 #ifndef __ID3D12ProtectedResourceSession_INTERFACE_DEFINED__
 #define __ID3D12ProtectedResourceSession_INTERFACE_DEFINED__
@@ -15435,7 +15064,7 @@ void __RPC_STUB ID3D12Device4_GetResourceAllocationInfo1_Stub(
 #endif 	/* __ID3D12Device4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0031 */
+/* interface __MIDL_itf_d3d12_0000_0030 */
 /* [local] */ 
 
 typedef 
@@ -15448,8 +15077,8 @@ enum D3D12_LIFETIME_STATE
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0030_v0_0_s_ifspec;
 
 #ifndef __ID3D12LifetimeOwner_INTERFACE_DEFINED__
 #define __ID3D12LifetimeOwner_INTERFACE_DEFINED__
@@ -15821,7 +15450,7 @@ EXTERN_C const IID IID_ID3D12LifetimeTracker;
 #endif 	/* __ID3D12LifetimeTracker_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0034 */
+/* interface __MIDL_itf_d3d12_0000_0033 */
 /* [local] */ 
 
 typedef 
@@ -15893,8 +15522,8 @@ typedef struct D3D12_META_COMMAND_DESC
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0033_v0_0_s_ifspec;
 
 #ifndef __ID3D12StateObject_INTERFACE_DEFINED__
 #define __ID3D12StateObject_INTERFACE_DEFINED__
@@ -16150,7 +15779,7 @@ EXTERN_C const IID IID_ID3D12StateObjectProperties;
 #endif 	/* __ID3D12StateObjectProperties_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0036 */
+/* interface __MIDL_itf_d3d12_0000_0035 */
 /* [local] */ 
 
 typedef struct D3D12_PROGRAM_IDENTIFIER
@@ -16160,8 +15789,8 @@ typedef struct D3D12_PROGRAM_IDENTIFIER
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0035_v0_0_s_ifspec;
 
 #ifndef __ID3D12StateObjectProperties1_INTERFACE_DEFINED__
 #define __ID3D12StateObjectProperties1_INTERFACE_DEFINED__
@@ -16294,166 +15923,7 @@ void __RPC_STUB ID3D12StateObjectProperties1_GetProgramIdentifier_Stub(
 #endif 	/* __ID3D12StateObjectProperties1_INTERFACE_DEFINED__ */
 
 
-#ifndef __ID3D12StateObjectProperties2_INTERFACE_DEFINED__
-#define __ID3D12StateObjectProperties2_INTERFACE_DEFINED__
-
-/* interface ID3D12StateObjectProperties2 */
-/* [unique][local][object][uuid] */ 
-
-
-EXTERN_C const IID IID_ID3D12StateObjectProperties2;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("d5e82917-f0f1-44cf-ae5e-ce222dd0b884")
-    ID3D12StateObjectProperties2 : public ID3D12StateObjectProperties1
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetGlobalRootSignatureForProgram( 
-            /* [annotation][in] */ 
-            _In_  LPCWSTR pProgramName,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvRootSignature) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetGlobalRootSignatureForShader( 
-            /* [annotation][in] */ 
-            _In_  LPCWSTR pExportName,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvRootSignature) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct ID3D12StateObjectProperties2Vtbl
-    {
-        BEGIN_INTERFACE
-        
-        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            ID3D12StateObjectProperties2 * This,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        DECLSPEC_XFGVIRT(IUnknown, AddRef)
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            ID3D12StateObjectProperties2 * This);
-        
-        DECLSPEC_XFGVIRT(IUnknown, Release)
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            ID3D12StateObjectProperties2 * This);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectProperties, GetShaderIdentifier)
-        void *( STDMETHODCALLTYPE *GetShaderIdentifier )( 
-            ID3D12StateObjectProperties2 * This,
-            /* [annotation] */ 
-            _In_  LPCWSTR pExportName);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectProperties, GetShaderStackSize)
-        UINT64 ( STDMETHODCALLTYPE *GetShaderStackSize )( 
-            ID3D12StateObjectProperties2 * This,
-            /* [annotation] */ 
-            _In_  LPCWSTR pExportName);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectProperties, GetPipelineStackSize)
-        UINT64 ( STDMETHODCALLTYPE *GetPipelineStackSize )( 
-            ID3D12StateObjectProperties2 * This);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectProperties, SetPipelineStackSize)
-        void ( STDMETHODCALLTYPE *SetPipelineStackSize )( 
-            ID3D12StateObjectProperties2 * This,
-            UINT64 PipelineStackSizeInBytes);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectProperties1, GetProgramIdentifier)
-        D3D12_PROGRAM_IDENTIFIER ( STDMETHODCALLTYPE *GetProgramIdentifier )( 
-            ID3D12StateObjectProperties2 * This,
-            LPCWSTR pProgramName);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectProperties2, GetGlobalRootSignatureForProgram)
-        HRESULT ( STDMETHODCALLTYPE *GetGlobalRootSignatureForProgram )( 
-            ID3D12StateObjectProperties2 * This,
-            /* [annotation][in] */ 
-            _In_  LPCWSTR pProgramName,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvRootSignature);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectProperties2, GetGlobalRootSignatureForShader)
-        HRESULT ( STDMETHODCALLTYPE *GetGlobalRootSignatureForShader )( 
-            ID3D12StateObjectProperties2 * This,
-            /* [annotation][in] */ 
-            _In_  LPCWSTR pExportName,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvRootSignature);
-        
-        END_INTERFACE
-    } ID3D12StateObjectProperties2Vtbl;
-
-    interface ID3D12StateObjectProperties2
-    {
-        CONST_VTBL struct ID3D12StateObjectProperties2Vtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define ID3D12StateObjectProperties2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define ID3D12StateObjectProperties2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define ID3D12StateObjectProperties2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define ID3D12StateObjectProperties2_GetShaderIdentifier(This,pExportName)	\
-    ( (This)->lpVtbl -> GetShaderIdentifier(This,pExportName) ) 
-
-#define ID3D12StateObjectProperties2_GetShaderStackSize(This,pExportName)	\
-    ( (This)->lpVtbl -> GetShaderStackSize(This,pExportName) ) 
-
-#define ID3D12StateObjectProperties2_GetPipelineStackSize(This)	\
-    ( (This)->lpVtbl -> GetPipelineStackSize(This) ) 
-
-#define ID3D12StateObjectProperties2_SetPipelineStackSize(This,PipelineStackSizeInBytes)	\
-    ( (This)->lpVtbl -> SetPipelineStackSize(This,PipelineStackSizeInBytes) ) 
-
-
-#define ID3D12StateObjectProperties2_GetProgramIdentifier(This,pProgramName)	\
-    ( (This)->lpVtbl -> GetProgramIdentifier(This,pProgramName) ) 
-
-
-#define ID3D12StateObjectProperties2_GetGlobalRootSignatureForProgram(This,pProgramName,riid,ppvRootSignature)	\
-    ( (This)->lpVtbl -> GetGlobalRootSignatureForProgram(This,pProgramName,riid,ppvRootSignature) ) 
-
-#define ID3D12StateObjectProperties2_GetGlobalRootSignatureForShader(This,pExportName,riid,ppvRootSignature)	\
-    ( (This)->lpVtbl -> GetGlobalRootSignatureForShader(This,pExportName,riid,ppvRootSignature) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* __ID3D12StateObjectProperties2_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_d3d12_0000_0038 */
+/* interface __MIDL_itf_d3d12_0000_0036 */
 /* [local] */ 
 
 typedef struct D3D12_NODE_ID
@@ -16471,8 +15941,8 @@ typedef struct D3D12_WORK_GRAPH_MEMORY_REQUIREMENTS
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0036_v0_0_s_ifspec;
 
 #ifndef __ID3D12WorkGraphProperties_INTERFACE_DEFINED__
 #define __ID3D12WorkGraphProperties_INTERFACE_DEFINED__
@@ -16733,7 +16203,209 @@ void __RPC_STUB ID3D12WorkGraphProperties_GetEntrypointID_Stub(
 #endif 	/* __ID3D12WorkGraphProperties_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0039 */
+#ifndef __ID3D12WorkGraphProperties1_INTERFACE_DEFINED__
+#define __ID3D12WorkGraphProperties1_INTERFACE_DEFINED__
+
+/* interface ID3D12WorkGraphProperties1 */
+/* [unique][local][object][uuid] */ 
+
+
+EXTERN_C const IID IID_ID3D12WorkGraphProperties1;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("5490ef66-165f-4b3f-9658-74e5c6d2e1d0")
+    ID3D12WorkGraphProperties1 : public ID3D12WorkGraphProperties
+    {
+    public:
+        virtual void STDMETHODCALLTYPE SetMaximumInputRecords( 
+            UINT WorkGraphIndex,
+            UINT MaxRecords,
+            UINT MaxNodeInputs) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ID3D12WorkGraphProperties1Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ID3D12WorkGraphProperties1 * This,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ID3D12WorkGraphProperties1 * This);
+        
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ID3D12WorkGraphProperties1 * This);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties, GetNumWorkGraphs)
+        UINT ( STDMETHODCALLTYPE *GetNumWorkGraphs )( 
+            ID3D12WorkGraphProperties1 * This);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties, GetProgramName)
+        LPCWSTR ( STDMETHODCALLTYPE *GetProgramName )( 
+            ID3D12WorkGraphProperties1 * This,
+            UINT WorkGraphIndex);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties, GetWorkGraphIndex)
+        UINT ( STDMETHODCALLTYPE *GetWorkGraphIndex )( 
+            ID3D12WorkGraphProperties1 * This,
+            LPCWSTR pProgramName);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties, GetNumNodes)
+        UINT ( STDMETHODCALLTYPE *GetNumNodes )( 
+            ID3D12WorkGraphProperties1 * This,
+            UINT WorkGraphIndex);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties, GetNodeID)
+        D3D12_NODE_ID ( STDMETHODCALLTYPE *GetNodeID )( 
+            ID3D12WorkGraphProperties1 * This,
+            UINT WorkGraphIndex,
+            UINT NodeIndex);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties, GetNodeIndex)
+        UINT ( STDMETHODCALLTYPE *GetNodeIndex )( 
+            ID3D12WorkGraphProperties1 * This,
+            UINT WorkGraphIndex,
+            D3D12_NODE_ID NodeID);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties, GetNodeLocalRootArgumentsTableIndex)
+        UINT ( STDMETHODCALLTYPE *GetNodeLocalRootArgumentsTableIndex )( 
+            ID3D12WorkGraphProperties1 * This,
+            UINT WorkGraphIndex,
+            UINT NodeIndex);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties, GetNumEntrypoints)
+        UINT ( STDMETHODCALLTYPE *GetNumEntrypoints )( 
+            ID3D12WorkGraphProperties1 * This,
+            UINT WorkGraphIndex);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties, GetEntrypointID)
+        D3D12_NODE_ID ( STDMETHODCALLTYPE *GetEntrypointID )( 
+            ID3D12WorkGraphProperties1 * This,
+            UINT WorkGraphIndex,
+            UINT EntrypointIndex);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties, GetEntrypointIndex)
+        UINT ( STDMETHODCALLTYPE *GetEntrypointIndex )( 
+            ID3D12WorkGraphProperties1 * This,
+            UINT WorkGraphIndex,
+            D3D12_NODE_ID NodeID);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties, GetEntrypointRecordSizeInBytes)
+        UINT ( STDMETHODCALLTYPE *GetEntrypointRecordSizeInBytes )( 
+            ID3D12WorkGraphProperties1 * This,
+            UINT WorkGraphIndex,
+            UINT EntrypointIndex);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties, GetWorkGraphMemoryRequirements)
+        void ( STDMETHODCALLTYPE *GetWorkGraphMemoryRequirements )( 
+            ID3D12WorkGraphProperties1 * This,
+            UINT WorkGraphIndex,
+            /* [annotation] */ 
+            _Out_  D3D12_WORK_GRAPH_MEMORY_REQUIREMENTS *pWorkGraphMemoryRequirements);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties, GetEntrypointRecordAlignmentInBytes)
+        UINT ( STDMETHODCALLTYPE *GetEntrypointRecordAlignmentInBytes )( 
+            ID3D12WorkGraphProperties1 * This,
+            UINT WorkGraphIndex,
+            UINT EntrypointIndex);
+        
+        DECLSPEC_XFGVIRT(ID3D12WorkGraphProperties1, SetMaximumInputRecords)
+        void ( STDMETHODCALLTYPE *SetMaximumInputRecords )( 
+            ID3D12WorkGraphProperties1 * This,
+            UINT WorkGraphIndex,
+            UINT MaxRecords,
+            UINT MaxNodeInputs);
+        
+        END_INTERFACE
+    } ID3D12WorkGraphProperties1Vtbl;
+
+    interface ID3D12WorkGraphProperties1
+    {
+        CONST_VTBL struct ID3D12WorkGraphProperties1Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ID3D12WorkGraphProperties1_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ID3D12WorkGraphProperties1_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ID3D12WorkGraphProperties1_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ID3D12WorkGraphProperties1_GetNumWorkGraphs(This)	\
+    ( (This)->lpVtbl -> GetNumWorkGraphs(This) ) 
+
+#define ID3D12WorkGraphProperties1_GetProgramName(This,WorkGraphIndex)	\
+    ( (This)->lpVtbl -> GetProgramName(This,WorkGraphIndex) ) 
+
+#define ID3D12WorkGraphProperties1_GetWorkGraphIndex(This,pProgramName)	\
+    ( (This)->lpVtbl -> GetWorkGraphIndex(This,pProgramName) ) 
+
+#define ID3D12WorkGraphProperties1_GetNumNodes(This,WorkGraphIndex)	\
+    ( (This)->lpVtbl -> GetNumNodes(This,WorkGraphIndex) ) 
+
+#define ID3D12WorkGraphProperties1_GetNodeID(This,WorkGraphIndex,NodeIndex)	\
+    ( (This)->lpVtbl -> GetNodeID(This,WorkGraphIndex,NodeIndex) ) 
+
+#define ID3D12WorkGraphProperties1_GetNodeIndex(This,WorkGraphIndex,NodeID)	\
+    ( (This)->lpVtbl -> GetNodeIndex(This,WorkGraphIndex,NodeID) ) 
+
+#define ID3D12WorkGraphProperties1_GetNodeLocalRootArgumentsTableIndex(This,WorkGraphIndex,NodeIndex)	\
+    ( (This)->lpVtbl -> GetNodeLocalRootArgumentsTableIndex(This,WorkGraphIndex,NodeIndex) ) 
+
+#define ID3D12WorkGraphProperties1_GetNumEntrypoints(This,WorkGraphIndex)	\
+    ( (This)->lpVtbl -> GetNumEntrypoints(This,WorkGraphIndex) ) 
+
+#define ID3D12WorkGraphProperties1_GetEntrypointID(This,WorkGraphIndex,EntrypointIndex)	\
+    ( (This)->lpVtbl -> GetEntrypointID(This,WorkGraphIndex,EntrypointIndex) ) 
+
+#define ID3D12WorkGraphProperties1_GetEntrypointIndex(This,WorkGraphIndex,NodeID)	\
+    ( (This)->lpVtbl -> GetEntrypointIndex(This,WorkGraphIndex,NodeID) ) 
+
+#define ID3D12WorkGraphProperties1_GetEntrypointRecordSizeInBytes(This,WorkGraphIndex,EntrypointIndex)	\
+    ( (This)->lpVtbl -> GetEntrypointRecordSizeInBytes(This,WorkGraphIndex,EntrypointIndex) ) 
+
+#define ID3D12WorkGraphProperties1_GetWorkGraphMemoryRequirements(This,WorkGraphIndex,pWorkGraphMemoryRequirements)	\
+    ( (This)->lpVtbl -> GetWorkGraphMemoryRequirements(This,WorkGraphIndex,pWorkGraphMemoryRequirements) ) 
+
+#define ID3D12WorkGraphProperties1_GetEntrypointRecordAlignmentInBytes(This,WorkGraphIndex,EntrypointIndex)	\
+    ( (This)->lpVtbl -> GetEntrypointRecordAlignmentInBytes(This,WorkGraphIndex,EntrypointIndex) ) 
+
+
+#define ID3D12WorkGraphProperties1_SetMaximumInputRecords(This,WorkGraphIndex,MaxRecords,MaxNodeInputs)	\
+    ( (This)->lpVtbl -> SetMaximumInputRecords(This,WorkGraphIndex,MaxRecords,MaxNodeInputs) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ID3D12WorkGraphProperties1_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_d3d12_0000_0038 */
 /* [local] */ 
 
 typedef 
@@ -16768,11 +16440,7 @@ enum D3D12_STATE_SUBOBJECT_TYPE
         D3D12_STATE_SUBOBJECT_TYPE_VIEW_INSTANCING	= 28,
         D3D12_STATE_SUBOBJECT_TYPE_GENERIC_PROGRAM	= 29,
         D3D12_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL2	= 30,
-        D3D12_STATE_SUBOBJECT_TYPE_GLOBAL_SERIALIZED_ROOT_SIGNATURE	= 31,
-        D3D12_STATE_SUBOBJECT_TYPE_LOCAL_SERIALIZED_ROOT_SIGNATURE	= 32,
-        D3D12_STATE_SUBOBJECT_TYPE_COMPILER_EXISITING_COLLECTION	= 33,
-        D3D12_STATE_SUBOBJECT_TYPE_EXISTING_COLLECTION_BY_KEY	= 36,
-        D3D12_STATE_SUBOBJECT_TYPE_MAX_VALID	= ( D3D12_STATE_SUBOBJECT_TYPE_EXISTING_COLLECTION_BY_KEY + 1 ) 
+        D3D12_STATE_SUBOBJECT_TYPE_MAX_VALID	= ( D3D12_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL2 + 1 ) 
     } 	D3D12_STATE_SUBOBJECT_TYPE;
 
 typedef struct D3D12_STATE_SUBOBJECT
@@ -16787,7 +16455,8 @@ enum D3D12_STATE_OBJECT_FLAGS
         D3D12_STATE_OBJECT_FLAG_NONE	= 0,
         D3D12_STATE_OBJECT_FLAG_ALLOW_LOCAL_DEPENDENCIES_ON_EXTERNAL_DEFINITIONS	= 0x1,
         D3D12_STATE_OBJECT_FLAG_ALLOW_EXTERNAL_DEPENDENCIES_ON_LOCAL_DEFINITIONS	= 0x2,
-        D3D12_STATE_OBJECT_FLAG_ALLOW_STATE_OBJECT_ADDITIONS	= 0x4
+        D3D12_STATE_OBJECT_FLAG_ALLOW_STATE_OBJECT_ADDITIONS	= 0x4,
+        D3D12_STATE_OBJECT_FLAG_WORK_GRAPHS_USE_GRAPHICS_STATE_FOR_GLOBAL_ROOT_SIGNATURE	= 0x40
     } 	D3D12_STATE_OBJECT_FLAGS;
 
 DEFINE_ENUM_FLAG_OPERATORS( D3D12_STATE_OBJECT_FLAGS )
@@ -17024,10 +16693,66 @@ typedef struct D3D12_SHADER_NODE
         } 	;
     } 	D3D12_SHADER_NODE;
 
+typedef struct D3D12_MAX_NODE_INPUT_RECORDS_PER_GRAPH_ENTRY_RECORD
+    {
+    UINT RecordCount;
+    BOOL bCountSharedAcrossNodeArray;
+    } 	D3D12_MAX_NODE_INPUT_RECORDS_PER_GRAPH_ENTRY_RECORD;
+
+typedef struct D3D12_MESH_LAUNCH_OVERRIDES
+    {
+    /* [annotation] */ 
+    _In_opt_  const UINT *pLocalRootArgumentsTableIndex;
+    /* [annotation] */ 
+    _In_opt_  const BOOL *pProgramEntry;
+    /* [annotation] */ 
+    _In_opt_  const D3D12_NODE_ID *pNewName;
+    /* [annotation] */ 
+    _In_opt_  const D3D12_NODE_ID *pShareInputOf;
+    /* [annotation] */ 
+    _In_reads_opt_(3)  const UINT *pDispatchGrid;
+    /* [annotation] */ 
+    _In_reads_opt_(3)  const UINT *pMaxDispatchGrid;
+    /* [annotation] */ 
+    _In_opt_  const D3D12_MAX_NODE_INPUT_RECORDS_PER_GRAPH_ENTRY_RECORD *pMaxInputRecordsPerGraphEntryRecord;
+    } 	D3D12_MESH_LAUNCH_OVERRIDES;
+
+typedef struct D3D12_COMMON_PROGRAM_NODE_OVERRIDES
+    {
+    /* [annotation] */ 
+    _In_opt_  const UINT *pLocalRootArgumentsTableIndex;
+    /* [annotation] */ 
+    _In_opt_  const BOOL *pProgramEntry;
+    /* [annotation] */ 
+    _In_opt_  const D3D12_NODE_ID *pNewName;
+    /* [annotation] */ 
+    _In_opt_   const D3D12_NODE_ID *pShareInputOf;
+    } 	D3D12_COMMON_PROGRAM_NODE_OVERRIDES;
+
+typedef 
+enum D3D12_PROGRAM_NODE_OVERRIDES_TYPE
+    {
+        D3D12_PROGRAM_NODE_OVERRIDES_TYPE_NONE	= 0,
+        D3D12_PROGRAM_NODE_OVERRIDES_TYPE_MESH_LAUNCH	= 3,
+        D3D12_PROGRAM_NODE_OVERRIDES_TYPE_COMMON_PROGRAM	= 4
+    } 	D3D12_PROGRAM_NODE_OVERRIDES_TYPE;
+
+typedef struct D3D12_PROGRAM_NODE
+    {
+    LPCWSTR Program;
+    D3D12_PROGRAM_NODE_OVERRIDES_TYPE OverridesType;
+    union 
+        {
+        const D3D12_MESH_LAUNCH_OVERRIDES *pMeshLaunchOverrides;
+        const D3D12_COMMON_PROGRAM_NODE_OVERRIDES *pCommonProgramNodeOverrides;
+        } 	;
+    } 	D3D12_PROGRAM_NODE;
+
 typedef 
 enum D3D12_NODE_TYPE
     {
-        D3D12_NODE_TYPE_SHADER	= 0
+        D3D12_NODE_TYPE_SHADER	= 0,
+        D3D12_NODE_TYPE_PROGRAM	= 0x1
     } 	D3D12_NODE_TYPE;
 
 typedef struct D3D12_NODE
@@ -17036,6 +16761,7 @@ typedef struct D3D12_NODE
     union 
         {
         D3D12_SHADER_NODE Shader;
+        D3D12_PROGRAM_NODE Program;
         } 	;
     } 	D3D12_NODE;
 
@@ -17043,7 +16769,8 @@ typedef
 enum D3D12_WORK_GRAPH_FLAGS
     {
         D3D12_WORK_GRAPH_FLAG_NONE	= 0,
-        D3D12_WORK_GRAPH_FLAG_INCLUDE_ALL_AVAILABLE_NODES	= 0x1
+        D3D12_WORK_GRAPH_FLAG_INCLUDE_ALL_AVAILABLE_NODES	= 0x1,
+        D3D12_WORK_GRAPH_FLAG_ENTRYPOINT_GRAPHICS_NODES_RASTERIZE_IN_ORDER	= 0x2
     } 	D3D12_WORK_GRAPH_FLAGS;
 
 DEFINE_ENUM_FLAG_OPERATORS( D3D12_WORK_GRAPH_FLAGS )
@@ -17218,7 +16945,8 @@ enum D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAGS
         D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_MINIMIZE_MEMORY	= 0x10,
         D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_PERFORM_UPDATE	= 0x20,
         D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_ALLOW_OMM_UPDATE	= 0x40,
-        D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_ALLOW_DISABLE_OMMS	= 0x80
+        D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_ALLOW_DISABLE_OMMS	= 0x80,
+        D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_ALLOW_DATA_ACCESS	= 0x100
     } 	D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAGS;
 
 DEFINE_ENUM_FLAG_OPERATORS( D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAGS )
@@ -17485,8 +17213,8 @@ enum D3D12_HIT_KIND
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0038_v0_0_s_ifspec;
 
 #ifndef __ID3D12Device5_INTERFACE_DEFINED__
 #define __ID3D12Device5_INTERFACE_DEFINED__
@@ -18465,125 +18193,63 @@ EXTERN_C const IID IID_ID3D12Device5;
 #endif 	/* __ID3D12Device5_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0040 */
+/* interface __MIDL_itf_d3d12_0000_0039 */
 /* [local] */ 
-
-typedef 
-enum D3D12_MARKER_API
-    {
-        D3D12_MARKER_API_SETMARKER	= 0,
-        D3D12_MARKER_API_BEGINEVENT	= 1,
-        D3D12_MARKER_API_ENDEVENT	= 2,
-        D3D12_MARKER_API_DRAWINSTANCED	= 3,
-        D3D12_MARKER_API_DRAWINDEXEDINSTANCED	= 4,
-        D3D12_MARKER_API_EXECUTEINDIRECT	= 5,
-        D3D12_MARKER_API_DISPATCH	= 6,
-        D3D12_MARKER_API_COPYBUFFERREGION	= 7,
-        D3D12_MARKER_API_COPYTEXTUREREGION	= 8,
-        D3D12_MARKER_API_COPYRESOURCE	= 9,
-        D3D12_MARKER_API_COPYTILES	= 10,
-        D3D12_MARKER_API_RESOLVESUBRESOURCE	= 11,
-        D3D12_MARKER_API_CLEARRENDERTARGETVIEW	= 12,
-        D3D12_MARKER_API_CLEARUNORDEREDACCESSVIEW	= 13,
-        D3D12_MARKER_API_CLEARDEPTHSTENCILVIEW	= 14,
-        D3D12_MARKER_API_RESOURCEBARRIER	= 15,
-        D3D12_MARKER_API_EXECUTEBUNDLE	= 16,
-        D3D12_MARKER_API_PRESENT	= 17,
-        D3D12_MARKER_API_RESOLVEQUERYDATA	= 18,
-        D3D12_MARKER_API_BEGINSUBMISSION	= 19,
-        D3D12_MARKER_API_ENDSUBMISSION	= 20,
-        D3D12_MARKER_API_DECODEFRAME	= 21,
-        D3D12_MARKER_API_PROCESSFRAMES	= 22,
-        D3D12_MARKER_API_ATOMICCOPYBUFFERUINT	= 23,
-        D3D12_MARKER_API_ATOMICCOPYBUFFERUINT64	= 24,
-        D3D12_MARKER_API_RESOLVESUBRESOURCEREGION	= 25,
-        D3D12_MARKER_API_WRITEBUFFERIMMEDIATE	= 26,
-        D3D12_MARKER_API_DECODEFRAME1	= 27,
-        D3D12_MARKER_API_SETPROTECTEDRESOURCESESSION	= 28,
-        D3D12_MARKER_API_DECODEFRAME2	= 29,
-        D3D12_MARKER_API_PROCESSFRAMES1	= 30,
-        D3D12_MARKER_API_BUILDRAYTRACINGACCELERATIONSTRUCTURE	= 31,
-        D3D12_MARKER_API_EMITRAYTRACINGACCELERATIONSTRUCTUREPOSTBUILDINFO	= 32,
-        D3D12_MARKER_API_COPYRAYTRACINGACCELERATIONSTRUCTURE	= 33,
-        D3D12_MARKER_API_DISPATCHRAYS	= 34,
-        D3D12_MARKER_API_INITIALIZEMETACOMMAND	= 35,
-        D3D12_MARKER_API_EXECUTEMETACOMMAND	= 36,
-        D3D12_MARKER_API_ESTIMATEMOTION	= 37,
-        D3D12_MARKER_API_RESOLVEMOTIONVECTORHEAP	= 38,
-        D3D12_MARKER_API_SETPIPELINESTATE1	= 39,
-        D3D12_MARKER_API_INITIALIZEEXTENSIONCOMMAND	= 40,
-        D3D12_MARKER_API_EXECUTEEXTENSIONCOMMAND	= 41,
-        D3D12_MARKER_API_DISPATCHMESH	= 42,
-        D3D12_MARKER_API_ENCODEFRAME	= 43,
-        D3D12_MARKER_API_RESOLVEENCODEROUTPUTMETADATA	= 44,
-        D3D12_MARKER_API_BARRIER	= 45,
-        D3D12_MARKER_API_BEGIN_COMMAND_LIST	= 46,
-        D3D12_MARKER_API_DISPATCHGRAPH	= 47,
-        D3D12_MARKER_API_SETPROGRAM	= 48,
-        D3D12_MARKER_API_ENCODEFRAME1	= 49,
-        D3D12_MARKER_API_RESOLVEENCODEROUTPUTMETADATA1	= 50,
-        D3D12_MARKER_API_RESOLVEINPUTPARAMLAYOUT	= 51,
-        D3D12_MARKER_API_PROCESSFRAMES2	= 52,
-        D3D12_MARKER_API_SET_WORK_GRAPH_MAXIMUM_GPU_INPUT_RECORDS	= 53
-    } 	D3D12_MARKER_API;
 
 typedef 
 enum D3D12_AUTO_BREADCRUMB_OP
     {
-        D3D12_AUTO_BREADCRUMB_OP_SETMARKER	= D3D12_MARKER_API_SETMARKER,
-        D3D12_AUTO_BREADCRUMB_OP_BEGINEVENT	= D3D12_MARKER_API_BEGINEVENT,
-        D3D12_AUTO_BREADCRUMB_OP_ENDEVENT	= D3D12_MARKER_API_ENDEVENT,
-        D3D12_AUTO_BREADCRUMB_OP_DRAWINSTANCED	= D3D12_MARKER_API_DRAWINSTANCED,
-        D3D12_AUTO_BREADCRUMB_OP_DRAWINDEXEDINSTANCED	= D3D12_MARKER_API_DRAWINDEXEDINSTANCED,
-        D3D12_AUTO_BREADCRUMB_OP_EXECUTEINDIRECT	= D3D12_MARKER_API_EXECUTEINDIRECT,
-        D3D12_AUTO_BREADCRUMB_OP_DISPATCH	= D3D12_MARKER_API_DISPATCH,
-        D3D12_AUTO_BREADCRUMB_OP_COPYBUFFERREGION	= D3D12_MARKER_API_COPYBUFFERREGION,
-        D3D12_AUTO_BREADCRUMB_OP_COPYTEXTUREREGION	= D3D12_MARKER_API_COPYTEXTUREREGION,
-        D3D12_AUTO_BREADCRUMB_OP_COPYRESOURCE	= D3D12_MARKER_API_COPYRESOURCE,
-        D3D12_AUTO_BREADCRUMB_OP_COPYTILES	= D3D12_MARKER_API_COPYTILES,
-        D3D12_AUTO_BREADCRUMB_OP_RESOLVESUBRESOURCE	= D3D12_MARKER_API_RESOLVESUBRESOURCE,
-        D3D12_AUTO_BREADCRUMB_OP_CLEARRENDERTARGETVIEW	= D3D12_MARKER_API_CLEARRENDERTARGETVIEW,
-        D3D12_AUTO_BREADCRUMB_OP_CLEARUNORDEREDACCESSVIEW	= D3D12_MARKER_API_CLEARUNORDEREDACCESSVIEW,
-        D3D12_AUTO_BREADCRUMB_OP_CLEARDEPTHSTENCILVIEW	= D3D12_MARKER_API_CLEARDEPTHSTENCILVIEW,
-        D3D12_AUTO_BREADCRUMB_OP_RESOURCEBARRIER	= D3D12_MARKER_API_RESOURCEBARRIER,
-        D3D12_AUTO_BREADCRUMB_OP_EXECUTEBUNDLE	= D3D12_MARKER_API_EXECUTEBUNDLE,
-        D3D12_AUTO_BREADCRUMB_OP_PRESENT	= D3D12_MARKER_API_PRESENT,
-        D3D12_AUTO_BREADCRUMB_OP_RESOLVEQUERYDATA	= D3D12_MARKER_API_RESOLVEQUERYDATA,
-        D3D12_AUTO_BREADCRUMB_OP_BEGINSUBMISSION	= D3D12_MARKER_API_BEGINSUBMISSION,
-        D3D12_AUTO_BREADCRUMB_OP_ENDSUBMISSION	= D3D12_MARKER_API_ENDSUBMISSION,
-        D3D12_AUTO_BREADCRUMB_OP_DECODEFRAME	= D3D12_MARKER_API_DECODEFRAME,
-        D3D12_AUTO_BREADCRUMB_OP_PROCESSFRAMES	= D3D12_MARKER_API_PROCESSFRAMES,
-        D3D12_AUTO_BREADCRUMB_OP_ATOMICCOPYBUFFERUINT	= D3D12_MARKER_API_ATOMICCOPYBUFFERUINT,
-        D3D12_AUTO_BREADCRUMB_OP_ATOMICCOPYBUFFERUINT64	= D3D12_MARKER_API_ATOMICCOPYBUFFERUINT64,
-        D3D12_AUTO_BREADCRUMB_OP_RESOLVESUBRESOURCEREGION	= D3D12_MARKER_API_RESOLVESUBRESOURCEREGION,
-        D3D12_AUTO_BREADCRUMB_OP_WRITEBUFFERIMMEDIATE	= D3D12_MARKER_API_WRITEBUFFERIMMEDIATE,
-        D3D12_AUTO_BREADCRUMB_OP_DECODEFRAME1	= D3D12_MARKER_API_DECODEFRAME1,
-        D3D12_AUTO_BREADCRUMB_OP_SETPROTECTEDRESOURCESESSION	= D3D12_MARKER_API_SETPROTECTEDRESOURCESESSION,
-        D3D12_AUTO_BREADCRUMB_OP_DECODEFRAME2	= D3D12_MARKER_API_DECODEFRAME2,
-        D3D12_AUTO_BREADCRUMB_OP_PROCESSFRAMES1	= D3D12_MARKER_API_PROCESSFRAMES1,
-        D3D12_AUTO_BREADCRUMB_OP_BUILDRAYTRACINGACCELERATIONSTRUCTURE	= D3D12_MARKER_API_BUILDRAYTRACINGACCELERATIONSTRUCTURE,
-        D3D12_AUTO_BREADCRUMB_OP_EMITRAYTRACINGACCELERATIONSTRUCTUREPOSTBUILDINFO	= D3D12_MARKER_API_EMITRAYTRACINGACCELERATIONSTRUCTUREPOSTBUILDINFO,
-        D3D12_AUTO_BREADCRUMB_OP_COPYRAYTRACINGACCELERATIONSTRUCTURE	= D3D12_MARKER_API_COPYRAYTRACINGACCELERATIONSTRUCTURE,
-        D3D12_AUTO_BREADCRUMB_OP_DISPATCHRAYS	= D3D12_MARKER_API_DISPATCHRAYS,
-        D3D12_AUTO_BREADCRUMB_OP_INITIALIZEMETACOMMAND	= D3D12_MARKER_API_INITIALIZEMETACOMMAND,
-        D3D12_AUTO_BREADCRUMB_OP_EXECUTEMETACOMMAND	= D3D12_MARKER_API_EXECUTEMETACOMMAND,
-        D3D12_AUTO_BREADCRUMB_OP_ESTIMATEMOTION	= D3D12_MARKER_API_ESTIMATEMOTION,
-        D3D12_AUTO_BREADCRUMB_OP_RESOLVEMOTIONVECTORHEAP	= D3D12_MARKER_API_RESOLVEMOTIONVECTORHEAP,
-        D3D12_AUTO_BREADCRUMB_OP_SETPIPELINESTATE1	= D3D12_MARKER_API_SETPIPELINESTATE1,
-        D3D12_AUTO_BREADCRUMB_OP_INITIALIZEEXTENSIONCOMMAND	= D3D12_MARKER_API_INITIALIZEEXTENSIONCOMMAND,
-        D3D12_AUTO_BREADCRUMB_OP_EXECUTEEXTENSIONCOMMAND	= D3D12_MARKER_API_EXECUTEEXTENSIONCOMMAND,
-        D3D12_AUTO_BREADCRUMB_OP_DISPATCHMESH	= D3D12_MARKER_API_DISPATCHMESH,
-        D3D12_AUTO_BREADCRUMB_OP_ENCODEFRAME	= D3D12_MARKER_API_ENCODEFRAME,
-        D3D12_AUTO_BREADCRUMB_OP_RESOLVEENCODEROUTPUTMETADATA	= D3D12_MARKER_API_RESOLVEENCODEROUTPUTMETADATA,
-        D3D12_AUTO_BREADCRUMB_OP_BARRIER	= D3D12_MARKER_API_BARRIER,
-        D3D12_AUTO_BREADCRUMB_OP_BEGIN_COMMAND_LIST	= D3D12_MARKER_API_BEGIN_COMMAND_LIST,
-        D3D12_AUTO_BREADCRUMB_OP_DISPATCHGRAPH	= D3D12_MARKER_API_DISPATCHGRAPH,
-        D3D12_AUTO_BREADCRUMB_OP_SETPROGRAM	= D3D12_MARKER_API_SETPROGRAM,
-        D3D12_AUTO_BREADCRUMB_OP_ENCODEFRAME1	= D3D12_MARKER_API_ENCODEFRAME1,
-        D3D12_AUTO_BREADCRUMB_OP_RESOLVEENCODEROUTPUTMETADATA1	= D3D12_MARKER_API_RESOLVEENCODEROUTPUTMETADATA1,
-        D3D12_AUTO_BREADCRUMB_OP_RESOLVEINPUTPARAMLAYOUT	= D3D12_MARKER_API_RESOLVEINPUTPARAMLAYOUT,
-        D3D12_AUTO_BREADCRUMB_OP_PROCESSFRAMES2	= D3D12_MARKER_API_PROCESSFRAMES2,
-        D3D12_AUTO_BREADCRUMB_OP_SET_WORK_GRAPH_MAXIMUM_GPU_INPUT_RECORDS	= D3D12_MARKER_API_SET_WORK_GRAPH_MAXIMUM_GPU_INPUT_RECORDS
+        D3D12_AUTO_BREADCRUMB_OP_SETMARKER	= 0,
+        D3D12_AUTO_BREADCRUMB_OP_BEGINEVENT	= 1,
+        D3D12_AUTO_BREADCRUMB_OP_ENDEVENT	= 2,
+        D3D12_AUTO_BREADCRUMB_OP_DRAWINSTANCED	= 3,
+        D3D12_AUTO_BREADCRUMB_OP_DRAWINDEXEDINSTANCED	= 4,
+        D3D12_AUTO_BREADCRUMB_OP_EXECUTEINDIRECT	= 5,
+        D3D12_AUTO_BREADCRUMB_OP_DISPATCH	= 6,
+        D3D12_AUTO_BREADCRUMB_OP_COPYBUFFERREGION	= 7,
+        D3D12_AUTO_BREADCRUMB_OP_COPYTEXTUREREGION	= 8,
+        D3D12_AUTO_BREADCRUMB_OP_COPYRESOURCE	= 9,
+        D3D12_AUTO_BREADCRUMB_OP_COPYTILES	= 10,
+        D3D12_AUTO_BREADCRUMB_OP_RESOLVESUBRESOURCE	= 11,
+        D3D12_AUTO_BREADCRUMB_OP_CLEARRENDERTARGETVIEW	= 12,
+        D3D12_AUTO_BREADCRUMB_OP_CLEARUNORDEREDACCESSVIEW	= 13,
+        D3D12_AUTO_BREADCRUMB_OP_CLEARDEPTHSTENCILVIEW	= 14,
+        D3D12_AUTO_BREADCRUMB_OP_RESOURCEBARRIER	= 15,
+        D3D12_AUTO_BREADCRUMB_OP_EXECUTEBUNDLE	= 16,
+        D3D12_AUTO_BREADCRUMB_OP_PRESENT	= 17,
+        D3D12_AUTO_BREADCRUMB_OP_RESOLVEQUERYDATA	= 18,
+        D3D12_AUTO_BREADCRUMB_OP_BEGINSUBMISSION	= 19,
+        D3D12_AUTO_BREADCRUMB_OP_ENDSUBMISSION	= 20,
+        D3D12_AUTO_BREADCRUMB_OP_DECODEFRAME	= 21,
+        D3D12_AUTO_BREADCRUMB_OP_PROCESSFRAMES	= 22,
+        D3D12_AUTO_BREADCRUMB_OP_ATOMICCOPYBUFFERUINT	= 23,
+        D3D12_AUTO_BREADCRUMB_OP_ATOMICCOPYBUFFERUINT64	= 24,
+        D3D12_AUTO_BREADCRUMB_OP_RESOLVESUBRESOURCEREGION	= 25,
+        D3D12_AUTO_BREADCRUMB_OP_WRITEBUFFERIMMEDIATE	= 26,
+        D3D12_AUTO_BREADCRUMB_OP_DECODEFRAME1	= 27,
+        D3D12_AUTO_BREADCRUMB_OP_SETPROTECTEDRESOURCESESSION	= 28,
+        D3D12_AUTO_BREADCRUMB_OP_DECODEFRAME2	= 29,
+        D3D12_AUTO_BREADCRUMB_OP_PROCESSFRAMES1	= 30,
+        D3D12_AUTO_BREADCRUMB_OP_BUILDRAYTRACINGACCELERATIONSTRUCTURE	= 31,
+        D3D12_AUTO_BREADCRUMB_OP_EMITRAYTRACINGACCELERATIONSTRUCTUREPOSTBUILDINFO	= 32,
+        D3D12_AUTO_BREADCRUMB_OP_COPYRAYTRACINGACCELERATIONSTRUCTURE	= 33,
+        D3D12_AUTO_BREADCRUMB_OP_DISPATCHRAYS	= 34,
+        D3D12_AUTO_BREADCRUMB_OP_INITIALIZEMETACOMMAND	= 35,
+        D3D12_AUTO_BREADCRUMB_OP_EXECUTEMETACOMMAND	= 36,
+        D3D12_AUTO_BREADCRUMB_OP_ESTIMATEMOTION	= 37,
+        D3D12_AUTO_BREADCRUMB_OP_RESOLVEMOTIONVECTORHEAP	= 38,
+        D3D12_AUTO_BREADCRUMB_OP_SETPIPELINESTATE1	= 39,
+        D3D12_AUTO_BREADCRUMB_OP_INITIALIZEEXTENSIONCOMMAND	= 40,
+        D3D12_AUTO_BREADCRUMB_OP_EXECUTEEXTENSIONCOMMAND	= 41,
+        D3D12_AUTO_BREADCRUMB_OP_DISPATCHMESH	= 42,
+        D3D12_AUTO_BREADCRUMB_OP_ENCODEFRAME	= 43,
+        D3D12_AUTO_BREADCRUMB_OP_RESOLVEENCODEROUTPUTMETADATA	= 44,
+        D3D12_AUTO_BREADCRUMB_OP_BARRIER	= 45,
+        D3D12_AUTO_BREADCRUMB_OP_BEGIN_COMMAND_LIST	= 46,
+        D3D12_AUTO_BREADCRUMB_OP_DISPATCHGRAPH	= 47,
+        D3D12_AUTO_BREADCRUMB_OP_SETPROGRAM	= 48,
+        D3D12_AUTO_BREADCRUMB_OP_PROCESSFRAMES2	= 52,
+        D3D12_AUTO_BREADCRUMB_OP_CONVERT_LINEAR_ALGEBRA_MATRIX	= 56
     } 	D3D12_AUTO_BREADCRUMB_OP;
 
 typedef struct D3D12_AUTO_BREADCRUMB_NODE
@@ -18799,8 +18465,8 @@ typedef struct D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0039_v0_0_s_ifspec;
 
 #ifndef __ID3D12DeviceRemovedExtendedDataSettings_INTERFACE_DEFINED__
 #define __ID3D12DeviceRemovedExtendedDataSettings_INTERFACE_DEFINED__
@@ -19491,7 +19157,7 @@ EXTERN_C const IID IID_ID3D12DeviceRemovedExtendedData2;
 #endif 	/* __ID3D12DeviceRemovedExtendedData2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0046 */
+/* interface __MIDL_itf_d3d12_0000_0045 */
 /* [local] */ 
 
 typedef 
@@ -19514,8 +19180,8 @@ enum D3D12_MEASUREMENTS_ACTION
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0045_v0_0_s_ifspec;
 
 #ifndef __ID3D12Device6_INTERFACE_DEFINED__
 #define __ID3D12Device6_INTERFACE_DEFINED__
@@ -20454,7 +20120,7 @@ EXTERN_C const IID IID_ID3D12Device6;
 #endif 	/* __ID3D12Device6_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0047 */
+/* interface __MIDL_itf_d3d12_0000_0046 */
 /* [local] */ 
 
 DEFINE_GUID(D3D12_PROTECTED_RESOURCES_SESSION_HARDWARE_PROTECTED,                           0x62B0084E, 0xC70E, 0x4DAA, 0xA1, 0x09, 0x30, 0xFF, 0x8D, 0x5A, 0x04, 0x82); 
@@ -20480,8 +20146,8 @@ typedef struct D3D12_PROTECTED_RESOURCE_SESSION_DESC1
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0046_v0_0_s_ifspec;
 
 #ifndef __ID3D12ProtectedResourceSession1_INTERFACE_DEFINED__
 #define __ID3D12ProtectedResourceSession1_INTERFACE_DEFINED__
@@ -24294,7 +23960,7 @@ EXTERN_C const IID IID_ID3D12GraphicsCommandList3;
 #endif 	/* __ID3D12GraphicsCommandList3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0054 */
+/* interface __MIDL_itf_d3d12_0000_0053 */
 /* [local] */ 
 
 typedef 
@@ -24409,8 +24075,8 @@ enum D3D12_RENDER_PASS_FLAGS
 DEFINE_ENUM_FLAG_OPERATORS( D3D12_RENDER_PASS_FLAGS )
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0053_v0_0_s_ifspec;
 
 #ifndef __ID3D12MetaCommand_INTERFACE_DEFINED__
 #define __ID3D12MetaCommand_INTERFACE_DEFINED__
@@ -24563,7 +24229,7 @@ EXTERN_C const IID IID_ID3D12MetaCommand;
 #endif 	/* __ID3D12MetaCommand_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0055 */
+/* interface __MIDL_itf_d3d12_0000_0054 */
 /* [local] */ 
 
 typedef struct D3D12_DISPATCH_RAYS_DESC
@@ -24673,8 +24339,8 @@ typedef struct D3D12_DISPATCH_GRAPH_DESC
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0054_v0_0_s_ifspec;
 
 #ifndef __ID3D12GraphicsCommandList4_INTERFACE_DEFINED__
 #define __ID3D12GraphicsCommandList4_INTERFACE_DEFINED__
@@ -25736,7 +25402,7 @@ EXTERN_C const IID IID_ID3D12GraphicsCommandList4;
 #endif 	/* __ID3D12GraphicsCommandList4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0056 */
+/* interface __MIDL_itf_d3d12_0000_0055 */
 /* [local] */ 
 
 typedef 
@@ -25772,36 +25438,36 @@ enum D3D12_BARRIER_LAYOUT
         D3D12_BARRIER_LAYOUT_UNDEFINED	= 0xffffffff,
         D3D12_BARRIER_LAYOUT_COMMON	= 0,
         D3D12_BARRIER_LAYOUT_PRESENT	= 0,
-        D3D12_BARRIER_LAYOUT_GENERIC_READ	= 1,
-        D3D12_BARRIER_LAYOUT_RENDER_TARGET	= 2,
-        D3D12_BARRIER_LAYOUT_UNORDERED_ACCESS	= 3,
-        D3D12_BARRIER_LAYOUT_DEPTH_STENCIL_WRITE	= 4,
-        D3D12_BARRIER_LAYOUT_DEPTH_STENCIL_READ	= 5,
-        D3D12_BARRIER_LAYOUT_SHADER_RESOURCE	= 6,
-        D3D12_BARRIER_LAYOUT_COPY_SOURCE	= 7,
-        D3D12_BARRIER_LAYOUT_COPY_DEST	= 8,
-        D3D12_BARRIER_LAYOUT_RESOLVE_SOURCE	= 9,
-        D3D12_BARRIER_LAYOUT_RESOLVE_DEST	= 10,
-        D3D12_BARRIER_LAYOUT_SHADING_RATE_SOURCE	= 11,
-        D3D12_BARRIER_LAYOUT_VIDEO_DECODE_READ	= 12,
-        D3D12_BARRIER_LAYOUT_VIDEO_DECODE_WRITE	= 13,
-        D3D12_BARRIER_LAYOUT_VIDEO_PROCESS_READ	= 14,
-        D3D12_BARRIER_LAYOUT_VIDEO_PROCESS_WRITE	= 15,
-        D3D12_BARRIER_LAYOUT_VIDEO_ENCODE_READ	= 16,
-        D3D12_BARRIER_LAYOUT_VIDEO_ENCODE_WRITE	= 17,
-        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_COMMON	= 18,
-        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_GENERIC_READ	= 19,
-        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_UNORDERED_ACCESS	= 20,
-        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_SHADER_RESOURCE	= 21,
-        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_COPY_SOURCE	= 22,
-        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_COPY_DEST	= 23,
-        D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_COMMON	= 24,
-        D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_GENERIC_READ	= 25,
-        D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_UNORDERED_ACCESS	= 26,
-        D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_SHADER_RESOURCE	= 27,
-        D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_COPY_SOURCE	= 28,
-        D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_COPY_DEST	= 29,
-        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_GENERIC_READ_COMPUTE_QUEUE_ACCESSIBLE	= 31
+        D3D12_BARRIER_LAYOUT_GENERIC_READ	= ( D3D12_BARRIER_LAYOUT_PRESENT + 1 ) ,
+        D3D12_BARRIER_LAYOUT_RENDER_TARGET	= ( D3D12_BARRIER_LAYOUT_GENERIC_READ + 1 ) ,
+        D3D12_BARRIER_LAYOUT_UNORDERED_ACCESS	= ( D3D12_BARRIER_LAYOUT_RENDER_TARGET + 1 ) ,
+        D3D12_BARRIER_LAYOUT_DEPTH_STENCIL_WRITE	= ( D3D12_BARRIER_LAYOUT_UNORDERED_ACCESS + 1 ) ,
+        D3D12_BARRIER_LAYOUT_DEPTH_STENCIL_READ	= ( D3D12_BARRIER_LAYOUT_DEPTH_STENCIL_WRITE + 1 ) ,
+        D3D12_BARRIER_LAYOUT_SHADER_RESOURCE	= ( D3D12_BARRIER_LAYOUT_DEPTH_STENCIL_READ + 1 ) ,
+        D3D12_BARRIER_LAYOUT_COPY_SOURCE	= ( D3D12_BARRIER_LAYOUT_SHADER_RESOURCE + 1 ) ,
+        D3D12_BARRIER_LAYOUT_COPY_DEST	= ( D3D12_BARRIER_LAYOUT_COPY_SOURCE + 1 ) ,
+        D3D12_BARRIER_LAYOUT_RESOLVE_SOURCE	= ( D3D12_BARRIER_LAYOUT_COPY_DEST + 1 ) ,
+        D3D12_BARRIER_LAYOUT_RESOLVE_DEST	= ( D3D12_BARRIER_LAYOUT_RESOLVE_SOURCE + 1 ) ,
+        D3D12_BARRIER_LAYOUT_SHADING_RATE_SOURCE	= ( D3D12_BARRIER_LAYOUT_RESOLVE_DEST + 1 ) ,
+        D3D12_BARRIER_LAYOUT_VIDEO_DECODE_READ	= ( D3D12_BARRIER_LAYOUT_SHADING_RATE_SOURCE + 1 ) ,
+        D3D12_BARRIER_LAYOUT_VIDEO_DECODE_WRITE	= ( D3D12_BARRIER_LAYOUT_VIDEO_DECODE_READ + 1 ) ,
+        D3D12_BARRIER_LAYOUT_VIDEO_PROCESS_READ	= ( D3D12_BARRIER_LAYOUT_VIDEO_DECODE_WRITE + 1 ) ,
+        D3D12_BARRIER_LAYOUT_VIDEO_PROCESS_WRITE	= ( D3D12_BARRIER_LAYOUT_VIDEO_PROCESS_READ + 1 ) ,
+        D3D12_BARRIER_LAYOUT_VIDEO_ENCODE_READ	= ( D3D12_BARRIER_LAYOUT_VIDEO_PROCESS_WRITE + 1 ) ,
+        D3D12_BARRIER_LAYOUT_VIDEO_ENCODE_WRITE	= ( D3D12_BARRIER_LAYOUT_VIDEO_ENCODE_READ + 1 ) ,
+        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_COMMON	= ( D3D12_BARRIER_LAYOUT_VIDEO_ENCODE_WRITE + 1 ) ,
+        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_GENERIC_READ	= ( D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_COMMON + 1 ) ,
+        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_UNORDERED_ACCESS	= ( D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_GENERIC_READ + 1 ) ,
+        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_SHADER_RESOURCE	= ( D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_UNORDERED_ACCESS + 1 ) ,
+        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_COPY_SOURCE	= ( D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_SHADER_RESOURCE + 1 ) ,
+        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_COPY_DEST	= ( D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_COPY_SOURCE + 1 ) ,
+        D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_COMMON	= ( D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_COPY_DEST + 1 ) ,
+        D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_GENERIC_READ	= ( D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_COMMON + 1 ) ,
+        D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_UNORDERED_ACCESS	= ( D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_GENERIC_READ + 1 ) ,
+        D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_SHADER_RESOURCE	= ( D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_UNORDERED_ACCESS + 1 ) ,
+        D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_COPY_SOURCE	= ( D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_SHADER_RESOURCE + 1 ) ,
+        D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_COPY_DEST	= ( D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_COPY_SOURCE + 1 ) ,
+        D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_GENERIC_READ_COMPUTE_QUEUE_ACCESSIBLE	= ( D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_COPY_DEST + 1 ) 
     } 	D3D12_BARRIER_LAYOUT;
 
 typedef 
@@ -25830,6 +25496,7 @@ enum D3D12_BARRIER_SYNC
         D3D12_BARRIER_SYNC_VIDEO_ENCODE	= 0x400000,
         D3D12_BARRIER_SYNC_BUILD_RAYTRACING_ACCELERATION_STRUCTURE	= 0x800000,
         D3D12_BARRIER_SYNC_COPY_RAYTRACING_ACCELERATION_STRUCTURE	= 0x1000000,
+        D3D12_BARRIER_SYNC_CONVERT_LINEAR_ALGEBRA_MATRIX	= 0x20000000,
         D3D12_BARRIER_SYNC_SPLIT	= 0x80000000
     } 	D3D12_BARRIER_SYNC;
 
@@ -25943,8 +25610,8 @@ typedef struct D3D12_BARRIER_GROUP
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0055_v0_0_s_ifspec;
 
 #ifndef __ID3D12ShaderCacheSession_INTERFACE_DEFINED__
 #define __ID3D12ShaderCacheSession_INTERFACE_DEFINED__
@@ -26152,7 +25819,7 @@ void __RPC_STUB ID3D12ShaderCacheSession_GetDesc_Stub(
 #endif 	/* __ID3D12ShaderCacheSession_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0057 */
+/* interface __MIDL_itf_d3d12_0000_0056 */
 /* [local] */ 
 
 typedef 
@@ -26176,8 +25843,8 @@ enum D3D12_SHADER_CACHE_CONTROL_FLAGS
 DEFINE_ENUM_FLAG_OPERATORS( D3D12_SHADER_CACHE_CONTROL_FLAGS )
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0056_v0_0_s_ifspec;
 
 #ifndef __ID3D12Device9_INTERFACE_DEFINED__
 #define __ID3D12Device9_INTERFACE_DEFINED__
@@ -33303,290 +32970,6 @@ EXTERN_C const IID IID_ID3D12Device14;
 #endif 	/* __ID3D12Device14_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0063 */
-/* [local] */ 
-
-typedef union D3D12_VERSION_NUMBER
-    {
-    UINT64 Version;
-    UINT16 VersionParts[ 4 ];
-    } 	D3D12_VERSION_NUMBER;
-
-typedef struct D3D12_FEATURE_DATA_SHADERCACHE_ABI_SUPPORT
-    {
-    WCHAR szAdapterFamily[ 128 ];
-    UINT64 MinimumABISupportVersion;
-    UINT64 MaximumABISupportVersion;
-    D3D12_VERSION_NUMBER CompilerVersion;
-    D3D12_VERSION_NUMBER ApplicationProfileVersion;
-    } 	D3D12_FEATURE_DATA_SHADERCACHE_ABI_SUPPORT;
-
-typedef void ( __stdcall *D3D12PipelineStateFunc )( 
-    /* [annotation] */ 
-    _In_reads_bytes_(KeySize)  const void *pKey,
-    UINT KeySize,
-    UINT Version,
-    const D3D12_PIPELINE_STATE_STREAM_DESC *pDesc,
-    /* [annotation] */ 
-    _Inout_opt_  void *pContext);
-
-typedef void ( __stdcall *D3D12StateObjectFunc )( 
-    /* [annotation] */ 
-    _In_reads_bytes_(KeySize)  const void *pKey,
-    UINT KeySize,
-    UINT Version,
-    const D3D12_STATE_OBJECT_DESC *pDesc,
-    /* [annotation] */ 
-    _In_reads_bytes_(ParentKeySize)  const void *pParentKey,
-    UINT ParentKeySize,
-    /* [annotation] */ 
-    _Inout_opt_  void *pContext);
-
-typedef struct D3D12_APPLICATION_DESC
-    {
-    LPCWSTR pExeFilename;
-    LPCWSTR pName;
-    D3D12_VERSION_NUMBER Version;
-    LPCWSTR pEngineName;
-    D3D12_VERSION_NUMBER EngineVersion;
-    } 	D3D12_APPLICATION_DESC;
-
-typedef void ( __stdcall *D3D12ApplicationDescFunc )( 
-    /* [annotation] */ 
-    _In_  const D3D12_APPLICATION_DESC *pApplicationDesc,
-    /* [annotation] */ 
-    _Inout_opt_  void *pContext);
-
-typedef struct D3D12_EXISTING_COLLECTION_BY_KEY_DESC
-    {
-    /* [annotation] */ 
-    _Field_size_bytes_full_(KeySize)  const void *pKey;
-    UINT KeySize;
-    UINT NumExports;
-    /* [annotation] */ 
-    _In_reads_(NumExports)  const D3D12_EXPORT_DESC *pExports;
-    } 	D3D12_EXISTING_COLLECTION_BY_KEY_DESC;
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0063_v0_0_s_ifspec;
-
-#ifndef __ID3D12StateObjectDatabase_INTERFACE_DEFINED__
-#define __ID3D12StateObjectDatabase_INTERFACE_DEFINED__
-
-/* interface ID3D12StateObjectDatabase */
-/* [unique][local][object][uuid] */ 
-
-
-EXTERN_C const IID IID_ID3D12StateObjectDatabase;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("c56060b7-b5fc-4135-98e0-a1e9997eace0")
-    ID3D12StateObjectDatabase : public IUnknown
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE SetApplicationDesc( 
-            /* [annotation] */ 
-            _In_  const D3D12_APPLICATION_DESC *pApplicationDesc) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetApplicationDesc( 
-            /* [annotation] */ 
-            _In_  D3D12ApplicationDescFunc CallbackFunc,
-            /* [annotation] */ 
-            _Inout_opt_  void *pContext) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE StorePipelineStateDesc( 
-            /* [annotation] */ 
-            _In_reads_(KeySize)  const void *pKey,
-            UINT KeySize,
-            UINT Version,
-            /* [annotation] */ 
-            _In_  const D3D12_PIPELINE_STATE_STREAM_DESC *pDesc) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE FindPipelineStateDesc( 
-            /* [annotation] */ 
-            _In_reads_(KeySize)  const void *pKey,
-            UINT KeySize,
-            /* [annotation] */ 
-            _In_  D3D12PipelineStateFunc CallbackFunc,
-            /* [annotation] */ 
-            _Inout_opt_  void *pContext) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE StoreStateObjectDesc( 
-            /* [annotation] */ 
-            _In_reads_(KeySize)  const void *pKey,
-            UINT KeySize,
-            UINT Version,
-            /* [annotation] */ 
-            _In_  const D3D12_STATE_OBJECT_DESC *pDesc,
-            /* [annotation] */ 
-            _In_reads_opt_(StateObjectToGrowFromKeySize)  const void *pStateObjectToGrowFromKey,
-            UINT StateObjectToGrowFromKeySize) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE FindStateObjectDesc( 
-            /* [annotation] */ 
-            _In_reads_(keySize)  const void *pKey,
-            UINT KeySize,
-            D3D12StateObjectFunc CallbackFunc,
-            /* [annotation] */ 
-            _Inout_opt_  void *pContext) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE FindObjectVersion( 
-            /* [annotation] */ 
-            _In_reads_(keySize)  const void *pKey,
-            UINT KeySize,
-            /* [annotation] */ 
-            _Out_  UINT *pVersion) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct ID3D12StateObjectDatabaseVtbl
-    {
-        BEGIN_INTERFACE
-        
-        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            ID3D12StateObjectDatabase * This,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        DECLSPEC_XFGVIRT(IUnknown, AddRef)
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            ID3D12StateObjectDatabase * This);
-        
-        DECLSPEC_XFGVIRT(IUnknown, Release)
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            ID3D12StateObjectDatabase * This);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectDatabase, SetApplicationDesc)
-        HRESULT ( STDMETHODCALLTYPE *SetApplicationDesc )( 
-            ID3D12StateObjectDatabase * This,
-            /* [annotation] */ 
-            _In_  const D3D12_APPLICATION_DESC *pApplicationDesc);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectDatabase, GetApplicationDesc)
-        HRESULT ( STDMETHODCALLTYPE *GetApplicationDesc )( 
-            ID3D12StateObjectDatabase * This,
-            /* [annotation] */ 
-            _In_  D3D12ApplicationDescFunc CallbackFunc,
-            /* [annotation] */ 
-            _Inout_opt_  void *pContext);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectDatabase, StorePipelineStateDesc)
-        HRESULT ( STDMETHODCALLTYPE *StorePipelineStateDesc )( 
-            ID3D12StateObjectDatabase * This,
-            /* [annotation] */ 
-            _In_reads_(KeySize)  const void *pKey,
-            UINT KeySize,
-            UINT Version,
-            /* [annotation] */ 
-            _In_  const D3D12_PIPELINE_STATE_STREAM_DESC *pDesc);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectDatabase, FindPipelineStateDesc)
-        HRESULT ( STDMETHODCALLTYPE *FindPipelineStateDesc )( 
-            ID3D12StateObjectDatabase * This,
-            /* [annotation] */ 
-            _In_reads_(KeySize)  const void *pKey,
-            UINT KeySize,
-            /* [annotation] */ 
-            _In_  D3D12PipelineStateFunc CallbackFunc,
-            /* [annotation] */ 
-            _Inout_opt_  void *pContext);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectDatabase, StoreStateObjectDesc)
-        HRESULT ( STDMETHODCALLTYPE *StoreStateObjectDesc )( 
-            ID3D12StateObjectDatabase * This,
-            /* [annotation] */ 
-            _In_reads_(KeySize)  const void *pKey,
-            UINT KeySize,
-            UINT Version,
-            /* [annotation] */ 
-            _In_  const D3D12_STATE_OBJECT_DESC *pDesc,
-            /* [annotation] */ 
-            _In_reads_opt_(StateObjectToGrowFromKeySize)  const void *pStateObjectToGrowFromKey,
-            UINT StateObjectToGrowFromKeySize);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectDatabase, FindStateObjectDesc)
-        HRESULT ( STDMETHODCALLTYPE *FindStateObjectDesc )( 
-            ID3D12StateObjectDatabase * This,
-            /* [annotation] */ 
-            _In_reads_(keySize)  const void *pKey,
-            UINT KeySize,
-            D3D12StateObjectFunc CallbackFunc,
-            /* [annotation] */ 
-            _Inout_opt_  void *pContext);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectDatabase, FindObjectVersion)
-        HRESULT ( STDMETHODCALLTYPE *FindObjectVersion )( 
-            ID3D12StateObjectDatabase * This,
-            /* [annotation] */ 
-            _In_reads_(keySize)  const void *pKey,
-            UINT KeySize,
-            /* [annotation] */ 
-            _Out_  UINT *pVersion);
-        
-        END_INTERFACE
-    } ID3D12StateObjectDatabaseVtbl;
-
-    interface ID3D12StateObjectDatabase
-    {
-        CONST_VTBL struct ID3D12StateObjectDatabaseVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define ID3D12StateObjectDatabase_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define ID3D12StateObjectDatabase_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define ID3D12StateObjectDatabase_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define ID3D12StateObjectDatabase_SetApplicationDesc(This,pApplicationDesc)	\
-    ( (This)->lpVtbl -> SetApplicationDesc(This,pApplicationDesc) ) 
-
-#define ID3D12StateObjectDatabase_GetApplicationDesc(This,CallbackFunc,pContext)	\
-    ( (This)->lpVtbl -> GetApplicationDesc(This,CallbackFunc,pContext) ) 
-
-#define ID3D12StateObjectDatabase_StorePipelineStateDesc(This,pKey,KeySize,Version,pDesc)	\
-    ( (This)->lpVtbl -> StorePipelineStateDesc(This,pKey,KeySize,Version,pDesc) ) 
-
-#define ID3D12StateObjectDatabase_FindPipelineStateDesc(This,pKey,KeySize,CallbackFunc,pContext)	\
-    ( (This)->lpVtbl -> FindPipelineStateDesc(This,pKey,KeySize,CallbackFunc,pContext) ) 
-
-#define ID3D12StateObjectDatabase_StoreStateObjectDesc(This,pKey,KeySize,Version,pDesc,pStateObjectToGrowFromKey,StateObjectToGrowFromKeySize)	\
-    ( (This)->lpVtbl -> StoreStateObjectDesc(This,pKey,KeySize,Version,pDesc,pStateObjectToGrowFromKey,StateObjectToGrowFromKeySize) ) 
-
-#define ID3D12StateObjectDatabase_FindStateObjectDesc(This,pKey,KeySize,CallbackFunc,pContext)	\
-    ( (This)->lpVtbl -> FindStateObjectDesc(This,pKey,KeySize,CallbackFunc,pContext) ) 
-
-#define ID3D12StateObjectDatabase_FindObjectVersion(This,pKey,KeySize,pVersion)	\
-    ( (This)->lpVtbl -> FindObjectVersion(This,pKey,KeySize,pVersion) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* __ID3D12StateObjectDatabase_INTERFACE_DEFINED__ */
-
-
 #ifndef __ID3D12VirtualizationGuestDevice_INTERFACE_DEFINED__
 #define __ID3D12VirtualizationGuestDevice_INTERFACE_DEFINED__
 
@@ -34207,7 +33590,7 @@ EXTERN_C const IID IID_ID3D12DeviceTools;
 #endif 	/* __ID3D12DeviceTools_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0070 */
+/* interface __MIDL_itf_d3d12_0000_0068 */
 /* [local] */ 
 
 typedef 
@@ -34221,8 +33604,8 @@ enum D3D12_APPLICATION_SPECIFIC_DRIVER_BLOB_STATUS
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0068_v0_0_s_ifspec;
 
 #ifndef __ID3D12DeviceTools1_INTERFACE_DEFINED__
 #define __ID3D12DeviceTools1_INTERFACE_DEFINED__
@@ -34330,7 +33713,7 @@ EXTERN_C const IID IID_ID3D12DeviceTools1;
 #endif 	/* __ID3D12DeviceTools1_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0071 */
+/* interface __MIDL_itf_d3d12_0000_0069 */
 /* [local] */ 
 
 typedef struct D3D12_SUBRESOURCE_DATA
@@ -34463,6 +33846,34 @@ static const UUID D3D12GPUUploadHeapsOnUnsupportedOS = { /* 45dc51f3-767f-4588-b
     { 0xb2, 0x06, 0x0b, 0xaa, 0x2b, 0x16, 0xfb, 0xae }
 };
 // --------------------------------------------------------------------------------------------------------------------------------
+// Experimental Feature: D3D12StateObjectsExperiment
+//
+// Use with D3D12EnableExperimentalFeatures to enable preview features related to state objects.
+//
+// Enabling D3D12StateObjectsExperiment needs no configuration struct, pass NULL in the pConfigurationStructs array.
+//
+// --------------------------------------------------------------------------------------------------------------------------------
+static const UUID D3D12StateObjectsExperiment = { /* 398a7fd6-a15a-42c1-9605-4bd9999a61af */
+    0x398a7fd6,
+    0xa15a,
+    0x42c1,
+    {0x96, 0x05, 0x4b, 0xd9, 0x99, 0x9a, 0x61, 0xaf}
+};
+// --------------------------------------------------------------------------------------------------------------------------------
+// Experimental Feature: D3D12CooperativeVectorExperiment
+//
+// Use with D3D12CooperativeVectorExperiment to enable cooperative vector experimental feature.
+//
+// Enabling D3D12CooperativeVectorExperiment needs no configuration struct, pass NULL in the pConfigurationStructs array.
+//
+// --------------------------------------------------------------------------------------------------------------------------------
+static const UUID D3D12CooperativeVectorExperiment = { /* 384748be-cca5-471e-a125-5cc997e04d39 */
+    0x384748be,
+    0xcca5,
+    0x471e,
+    {0xa1, 0x25, 0x5c, 0xc9, 0x97, 0xe0, 0x4d, 0x39}
+};
+// --------------------------------------------------------------------------------------------------------------------------------
 // D3D12GetInterface
 //
 // Retrieve Global D3D12 Interface.
@@ -34474,7 +33885,6 @@ DEFINE_GUID(CLSID_D3D12DeviceRemovedExtendedData,    0x4a75bbc4, 0x9ff4, 0x4ad8,
 DEFINE_GUID(CLSID_D3D12SDKConfiguration,             0x7cda6aca, 0xa03e, 0x49c8, 0x94, 0x58, 0x03, 0x34, 0xd2, 0x0e, 0x07, 0xce);
 DEFINE_GUID(CLSID_D3D12DeviceFactory,                0x114863bf, 0xc386, 0x4aee, 0xb3, 0x9d, 0x8f, 0x0b, 0xbb, 0x06, 0x29, 0x55);
 DEFINE_GUID(CLSID_D3D12DSRDeviceFactory,             0xbb6dd27e, 0x94a9, 0x41a6, 0x9f, 0x1b, 0x13, 0x37, 0x72, 0x17, 0x24, 0x28);
-DEFINE_GUID(CLSID_D3D12StateObjectFactory,           0x54e1c9f3, 0x1303, 0x4112, 0xbf, 0x8e, 0x7b, 0xf2, 0xbb, 0x60, 0x6a, 0x73);
 
 typedef HRESULT (WINAPI* PFN_D3D12_GET_INTERFACE)( _In_ REFCLSID, _In_ REFIID, _COM_Outptr_opt_ void** );
 
@@ -34482,8 +33892,8 @@ HRESULT WINAPI D3D12GetInterface( _In_ REFCLSID rclsid, _In_ REFIID riid, _COM_O
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0069_v0_0_s_ifspec;
 
 #ifndef __ID3D12SDKConfiguration_INTERFACE_DEFINED__
 #define __ID3D12SDKConfiguration_INTERFACE_DEFINED__
@@ -34689,7 +34099,7 @@ EXTERN_C const IID IID_ID3D12SDKConfiguration1;
 #endif 	/* __ID3D12SDKConfiguration1_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0073 */
+/* interface __MIDL_itf_d3d12_0000_0071 */
 /* [local] */ 
 
 typedef 
@@ -34704,8 +34114,8 @@ enum D3D12_DEVICE_FACTORY_FLAGS
 DEFINE_ENUM_FLAG_OPERATORS( D3D12_DEVICE_FACTORY_FLAGS )
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0071_v0_0_s_ifspec;
 
 #ifndef __ID3D12DeviceFactory_INTERFACE_DEFINED__
 #define __ID3D12DeviceFactory_INTERFACE_DEFINED__
@@ -34880,7 +34290,7 @@ EXTERN_C const IID IID_ID3D12DeviceFactory;
 #endif 	/* __ID3D12DeviceFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0074 */
+/* interface __MIDL_itf_d3d12_0000_0072 */
 /* [local] */ 
 
 typedef 
@@ -34911,8 +34321,8 @@ typedef struct D3D12_DEVICE_CONFIGURATION_DESC
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0072_v0_0_s_ifspec;
 
 #ifndef __ID3D12DeviceConfiguration_INTERFACE_DEFINED__
 #define __ID3D12DeviceConfiguration_INTERFACE_DEFINED__
@@ -35206,116 +34616,7 @@ EXTERN_C const IID IID_ID3D12DeviceConfiguration1;
 #endif 	/* __ID3D12DeviceConfiguration1_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0076 */
-/* [local] */ 
-
-typedef 
-enum D3D12_STATE_OBJECT_DATABASE_FLAGS
-    {
-        D3D12_STATE_OBJECT_DATABASE_FLAG_NONE	= 0,
-        D3D12_STATE_OBJECT_DATABASE_FLAG_READ_ONLY	= 0x1
-    } 	D3D12_STATE_OBJECT_DATABASE_FLAGS;
-
-DEFINE_ENUM_FLAG_OPERATORS( D3D12_STATE_OBJECT_DATABASE_FLAGS )
-
-
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0076_v0_0_s_ifspec;
-
-#ifndef __ID3D12StateObjectDatabaseFactory_INTERFACE_DEFINED__
-#define __ID3D12StateObjectDatabaseFactory_INTERFACE_DEFINED__
-
-/* interface ID3D12StateObjectDatabaseFactory */
-/* [unique][local][object][uuid] */ 
-
-
-EXTERN_C const IID IID_ID3D12StateObjectDatabaseFactory;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("f5b066f0-648a-4611-bd41-27fd0948b9eb")
-    ID3D12StateObjectDatabaseFactory : public IUnknown
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE CreateStateObjectDatabaseFromFile( 
-            LPCWSTR pDatabaseFile,
-            D3D12_STATE_OBJECT_DATABASE_FLAGS flags,
-            REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvStateObjectDatabase) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct ID3D12StateObjectDatabaseFactoryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            ID3D12StateObjectDatabaseFactory * This,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        DECLSPEC_XFGVIRT(IUnknown, AddRef)
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            ID3D12StateObjectDatabaseFactory * This);
-        
-        DECLSPEC_XFGVIRT(IUnknown, Release)
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            ID3D12StateObjectDatabaseFactory * This);
-        
-        DECLSPEC_XFGVIRT(ID3D12StateObjectDatabaseFactory, CreateStateObjectDatabaseFromFile)
-        HRESULT ( STDMETHODCALLTYPE *CreateStateObjectDatabaseFromFile )( 
-            ID3D12StateObjectDatabaseFactory * This,
-            LPCWSTR pDatabaseFile,
-            D3D12_STATE_OBJECT_DATABASE_FLAGS flags,
-            REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvStateObjectDatabase);
-        
-        END_INTERFACE
-    } ID3D12StateObjectDatabaseFactoryVtbl;
-
-    interface ID3D12StateObjectDatabaseFactory
-    {
-        CONST_VTBL struct ID3D12StateObjectDatabaseFactoryVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define ID3D12StateObjectDatabaseFactory_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define ID3D12StateObjectDatabaseFactory_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define ID3D12StateObjectDatabaseFactory_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define ID3D12StateObjectDatabaseFactory_CreateStateObjectDatabaseFromFile(This,pDatabaseFile,flags,riid,ppvStateObjectDatabase)	\
-    ( (This)->lpVtbl -> CreateStateObjectDatabaseFromFile(This,pDatabaseFile,flags,riid,ppvStateObjectDatabase) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* __ID3D12StateObjectDatabaseFactory_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_d3d12_0000_0077 */
+/* interface __MIDL_itf_d3d12_0000_0074 */
 /* [local] */ 
 
 typedef 
@@ -35355,8 +34656,8 @@ enum D3D12_SHADING_RATE_COMBINER
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0074_v0_0_s_ifspec;
 
 #ifndef __ID3D12GraphicsCommandList5_INTERFACE_DEFINED__
 #define __ID3D12GraphicsCommandList5_INTERFACE_DEFINED__
@@ -36390,7 +35691,7 @@ EXTERN_C const IID IID_ID3D12GraphicsCommandList5;
 #endif 	/* __ID3D12GraphicsCommandList5_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0078 */
+/* interface __MIDL_itf_d3d12_0000_0075 */
 /* [local] */ 
 
 typedef struct D3D12_DISPATCH_MESH_ARGUMENTS
@@ -36402,8 +35703,8 @@ typedef struct D3D12_DISPATCH_MESH_ARGUMENTS
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0075_v0_0_s_ifspec;
 
 #ifndef __ID3D12GraphicsCommandList6_INTERFACE_DEFINED__
 #define __ID3D12GraphicsCommandList6_INTERFACE_DEFINED__
@@ -41769,6 +41070,1376 @@ EXTERN_C const IID IID_ID3D12GraphicsCommandList10;
 #endif 	/* __ID3D12GraphicsCommandList10_INTERFACE_DEFINED__ */
 
 
+/* interface __MIDL_itf_d3d12_0000_0080 */
+/* [local] */ 
+
+typedef 
+enum D3D12_COOPERATIVE_VECTOR_TIER
+    {
+        D3D12_COOPERATIVE_VECTOR_TIER_NOT_SUPPORTED	= 0,
+        D3D12_COOPERATIVE_VECTOR_TIER_1_0	= 0x10,
+        D3D12_COOPERATIVE_VECTOR_TIER_1_1	= 0x11
+    } 	D3D12_COOPERATIVE_VECTOR_TIER;
+
+typedef 
+enum D3D12_LINEAR_ALGEBRA_DATATYPE
+    {
+        D3D12_LINEAR_ALGEBRA_DATATYPE_SINT16	= 2,
+        D3D12_LINEAR_ALGEBRA_DATATYPE_UINT16	= 3,
+        D3D12_LINEAR_ALGEBRA_DATATYPE_SINT32	= 4,
+        D3D12_LINEAR_ALGEBRA_DATATYPE_UINT32	= 5,
+        D3D12_LINEAR_ALGEBRA_DATATYPE_FLOAT16	= 7,
+        D3D12_LINEAR_ALGEBRA_DATATYPE_FLOAT32	= 8,
+        D3D12_LINEAR_ALGEBRA_DATATYPE_SINT8_T4_PACKED	= 16,
+        D3D12_LINEAR_ALGEBRA_DATATYPE_UINT8_T4_PACKED	= 17,
+        D3D12_LINEAR_ALGEBRA_DATATYPE_UINT8	= 18,
+        D3D12_LINEAR_ALGEBRA_DATATYPE_SINT8	= 19,
+        D3D12_LINEAR_ALGEBRA_DATATYPE_FLOAT_E4M3	= 20,
+        D3D12_LINEAR_ALGEBRA_DATATYPE_FLOAT_E5M2	= 21
+    } 	D3D12_LINEAR_ALGEBRA_DATATYPE;
+
+typedef struct D3D12_FEATURE_DATA_D3D12_OPTIONS_EXPERIMENTAL
+    {
+    /* [annotation] */ 
+    _Out_  D3D12_COOPERATIVE_VECTOR_TIER CooperativeVectorTier;
+    } 	D3D12_FEATURE_DATA_D3D12_OPTIONS_EXPERIMENTAL;
+
+typedef struct D3D12_COOPERATIVE_VECTOR_PROPERTIES_MUL
+    {
+    D3D12_LINEAR_ALGEBRA_DATATYPE InputType;
+    D3D12_LINEAR_ALGEBRA_DATATYPE InputInterpretation;
+    D3D12_LINEAR_ALGEBRA_DATATYPE MatrixInterpretation;
+    D3D12_LINEAR_ALGEBRA_DATATYPE BiasInterpretation;
+    D3D12_LINEAR_ALGEBRA_DATATYPE OutputType;
+    BOOL TransposeSupported;
+    } 	D3D12_COOPERATIVE_VECTOR_PROPERTIES_MUL;
+
+typedef struct D3D12_COOPERATIVE_VECTOR_PROPERTIES_ACCUMULATE
+    {
+    D3D12_LINEAR_ALGEBRA_DATATYPE InputType;
+    D3D12_LINEAR_ALGEBRA_DATATYPE AccumulationType;
+    } 	D3D12_COOPERATIVE_VECTOR_PROPERTIES_ACCUMULATE;
+
+typedef struct D3D12_FEATURE_DATA_COOPERATIVE_VECTOR
+    {
+    /* [annotation] */ 
+    _Inout_  UINT MatrixVectorMulAddPropCount;
+    /* [annotation] */ 
+    _Out_  D3D12_COOPERATIVE_VECTOR_PROPERTIES_MUL *pMatrixVectorMulAddProperties;
+    /* [annotation] */ 
+    _Inout_  UINT OuterProductAccumulatePropCount;
+    /* [annotation] */ 
+    _Out_  D3D12_COOPERATIVE_VECTOR_PROPERTIES_ACCUMULATE *pOuterProductAccumulateProperties;
+    /* [annotation] */ 
+    _Inout_  UINT VectorAccumulatePropCount;
+    /* [annotation] */ 
+    _Out_  D3D12_COOPERATIVE_VECTOR_PROPERTIES_ACCUMULATE *pVectorAccumulateProperties;
+    } 	D3D12_FEATURE_DATA_COOPERATIVE_VECTOR;
+
+typedef 
+enum D3D12_LINEAR_ALGEBRA_MATRIX_LAYOUT
+    {
+        D3D12_LINEAR_ALGEBRA_MATRIX_LAYOUT_ROW_MAJOR	= 0,
+        D3D12_LINEAR_ALGEBRA_MATRIX_LAYOUT_COLUMN_MAJOR	= ( D3D12_LINEAR_ALGEBRA_MATRIX_LAYOUT_ROW_MAJOR + 1 ) ,
+        D3D12_LINEAR_ALGEBRA_MATRIX_LAYOUT_MUL_OPTIMAL	= ( D3D12_LINEAR_ALGEBRA_MATRIX_LAYOUT_COLUMN_MAJOR + 1 ) ,
+        D3D12_LINEAR_ALGEBRA_MATRIX_LAYOUT_OUTER_PRODUCT_OPTIMAL	= ( D3D12_LINEAR_ALGEBRA_MATRIX_LAYOUT_MUL_OPTIMAL + 1 ) 
+    } 	D3D12_LINEAR_ALGEBRA_MATRIX_LAYOUT;
+
+typedef struct D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_DEST_INFO
+    {
+    /* [annotation] */ 
+    _Inout_  UINT DestSize;
+    /* [annotation] */ 
+    _In_  D3D12_LINEAR_ALGEBRA_MATRIX_LAYOUT DestLayout;
+    /* [annotation] */ 
+    _In_  UINT DestStride;
+    /* [annotation] */ 
+    _In_  UINT NumRows;
+    /* [annotation] */ 
+    _In_  UINT NumColumns;
+    /* [annotation] */ 
+    _In_  D3D12_LINEAR_ALGEBRA_DATATYPE DestDataType;
+    } 	D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_DEST_INFO;
+
+typedef struct D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_DATA
+    {
+    /* [annotation] */ 
+    _Inout_  D3D12_GPU_VIRTUAL_ADDRESS DestVA;
+    /* [annotation] */ 
+    _In_  D3D12_GPU_VIRTUAL_ADDRESS SrcVA;
+    } 	D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_DATA;
+
+typedef struct D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_SRC_INFO
+    {
+    /* [annotation] */ 
+    _In_  UINT SrcSize;
+    /* [annotation] */ 
+    _In_  D3D12_LINEAR_ALGEBRA_DATATYPE SrcDataType;
+    /* [annotation] */ 
+    _In_  D3D12_LINEAR_ALGEBRA_MATRIX_LAYOUT SrcLayout;
+    /* [annotation] */ 
+    _In_  UINT SrcStride;
+    } 	D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_SRC_INFO;
+
+typedef struct D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_INFO
+    {
+    D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_DEST_INFO DestInfo;
+    D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_SRC_INFO SrcInfo;
+    D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_DATA DataDesc;
+    } 	D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_INFO;
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0080_v0_0_s_ifspec;
+
+#ifndef __ID3D12DevicePreview_INTERFACE_DEFINED__
+#define __ID3D12DevicePreview_INTERFACE_DEFINED__
+
+/* interface ID3D12DevicePreview */
+/* [unique][local][object][uuid] */ 
+
+
+EXTERN_C const IID IID_ID3D12DevicePreview;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("55ea41d3-6bf5-4332-bbf9-905e6b4e2930")
+    ID3D12DevicePreview : public IUnknown
+    {
+    public:
+        virtual void STDMETHODCALLTYPE GetLinearAlgebraMatrixConversionDestinationInfo( 
+            /* [annotation] */ 
+            _Inout_  D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_DEST_INFO *pDesc) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ID3D12DevicePreviewVtbl
+    {
+        BEGIN_INTERFACE
+        
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ID3D12DevicePreview * This,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ID3D12DevicePreview * This);
+        
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ID3D12DevicePreview * This);
+        
+        DECLSPEC_XFGVIRT(ID3D12DevicePreview, GetLinearAlgebraMatrixConversionDestinationInfo)
+        void ( STDMETHODCALLTYPE *GetLinearAlgebraMatrixConversionDestinationInfo )( 
+            ID3D12DevicePreview * This,
+            /* [annotation] */ 
+            _Inout_  D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_DEST_INFO *pDesc);
+        
+        END_INTERFACE
+    } ID3D12DevicePreviewVtbl;
+
+    interface ID3D12DevicePreview
+    {
+        CONST_VTBL struct ID3D12DevicePreviewVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ID3D12DevicePreview_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ID3D12DevicePreview_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ID3D12DevicePreview_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ID3D12DevicePreview_GetLinearAlgebraMatrixConversionDestinationInfo(This,pDesc)	\
+    ( (This)->lpVtbl -> GetLinearAlgebraMatrixConversionDestinationInfo(This,pDesc) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ID3D12DevicePreview_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_d3d12_0000_0081 */
+/* [local] */ 
+
+typedef 
+enum D3D12_FENCE_BARRIERS_TIER
+    {
+        D3D12_FENCE_BARRIERS_TIER_NOT_SUPPORTED	= 0,
+        D3D12_FENCE_BARRIERS_TIER_1	= 1,
+        D3D12_FENCE_BARRIERS_TIER_2	= 2
+    } 	D3D12_FENCE_BARRIERS_TIER;
+
+typedef struct D3D12_FEATURE_DATA_FENCE_BARRIERS
+    {
+    /* [annotation] */ 
+    _Inout_  D3D12_COMMAND_LIST_TYPE CommandListType;
+    /* [annotation] */ 
+    _Out_  D3D12_FENCE_BARRIERS_TIER FenceBarriersTier;
+    } 	D3D12_FEATURE_DATA_FENCE_BARRIERS;
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0081_v0_0_s_ifspec;
+
+#ifndef __ID3D12GraphicsCommandListPreview_INTERFACE_DEFINED__
+#define __ID3D12GraphicsCommandListPreview_INTERFACE_DEFINED__
+
+/* interface ID3D12GraphicsCommandListPreview */
+/* [unique][local][object][uuid] */ 
+
+
+EXTERN_C const IID IID_ID3D12GraphicsCommandListPreview;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("536d9bb6-9eee-4c75-86e8-e29e29e08ed3")
+    ID3D12GraphicsCommandListPreview : public ID3D12GraphicsCommandList10
+    {
+    public:
+        virtual void STDMETHODCALLTYPE SetWorkGraphMaximumGPUInputRecords( 
+            /* [annotation] */ 
+            _In_  UINT MaxRecords,
+            /* [annotation] */ 
+            _In_  UINT MaxNodeInputs) = 0;
+        
+        virtual void STDMETHODCALLTYPE ConvertLinearAlgebraMatrix( 
+            /* [annotation] */ 
+            _In_  const D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_INFO *pDesc,
+            /* [annotation] */ 
+            _In_  UINT DescCount) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ID3D12GraphicsCommandListPreviewVtbl
+    {
+        BEGIN_INTERFACE
+        
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ID3D12GraphicsCommandListPreview * This);
+        
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ID3D12GraphicsCommandListPreview * This);
+        
+        DECLSPEC_XFGVIRT(ID3D12Object, GetPrivateData)
+        HRESULT ( STDMETHODCALLTYPE *GetPrivateData )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  REFGUID guid,
+            /* [annotation] */ 
+            _Inout_  UINT *pDataSize,
+            /* [annotation] */ 
+            _Out_writes_bytes_opt_( *pDataSize )  void *pData);
+        
+        DECLSPEC_XFGVIRT(ID3D12Object, SetPrivateData)
+        HRESULT ( STDMETHODCALLTYPE *SetPrivateData )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  REFGUID guid,
+            /* [annotation] */ 
+            _In_  UINT DataSize,
+            /* [annotation] */ 
+            _In_reads_bytes_opt_( DataSize )  const void *pData);
+        
+        DECLSPEC_XFGVIRT(ID3D12Object, SetPrivateDataInterface)
+        HRESULT ( STDMETHODCALLTYPE *SetPrivateDataInterface )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  REFGUID guid,
+            /* [annotation] */ 
+            _In_opt_  const IUnknown *pData);
+        
+        DECLSPEC_XFGVIRT(ID3D12Object, SetName)
+        HRESULT ( STDMETHODCALLTYPE *SetName )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_z_  LPCWSTR Name);
+        
+        DECLSPEC_XFGVIRT(ID3D12DeviceChild, GetDevice)
+        HRESULT ( STDMETHODCALLTYPE *GetDevice )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_opt_  void **ppvDevice);
+        
+        DECLSPEC_XFGVIRT(ID3D12CommandList, GetType)
+        D3D12_COMMAND_LIST_TYPE ( STDMETHODCALLTYPE *GetType )( 
+            ID3D12GraphicsCommandListPreview * This);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, Close)
+        HRESULT ( STDMETHODCALLTYPE *Close )( 
+            ID3D12GraphicsCommandListPreview * This);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, Reset)
+        HRESULT ( STDMETHODCALLTYPE *Reset )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12CommandAllocator *pAllocator,
+            /* [annotation] */ 
+            _In_opt_  ID3D12PipelineState *pInitialState);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, ClearState)
+        void ( STDMETHODCALLTYPE *ClearState )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_opt_  ID3D12PipelineState *pPipelineState);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, DrawInstanced)
+        void ( STDMETHODCALLTYPE *DrawInstanced )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT VertexCountPerInstance,
+            /* [annotation] */ 
+            _In_  UINT InstanceCount,
+            /* [annotation] */ 
+            _In_  UINT StartVertexLocation,
+            /* [annotation] */ 
+            _In_  UINT StartInstanceLocation);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, DrawIndexedInstanced)
+        void ( STDMETHODCALLTYPE *DrawIndexedInstanced )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT IndexCountPerInstance,
+            /* [annotation] */ 
+            _In_  UINT InstanceCount,
+            /* [annotation] */ 
+            _In_  UINT StartIndexLocation,
+            /* [annotation] */ 
+            _In_  INT BaseVertexLocation,
+            /* [annotation] */ 
+            _In_  UINT StartInstanceLocation);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, Dispatch)
+        void ( STDMETHODCALLTYPE *Dispatch )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT ThreadGroupCountX,
+            /* [annotation] */ 
+            _In_  UINT ThreadGroupCountY,
+            /* [annotation] */ 
+            _In_  UINT ThreadGroupCountZ);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, CopyBufferRegion)
+        void ( STDMETHODCALLTYPE *CopyBufferRegion )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pDstBuffer,
+            UINT64 DstOffset,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pSrcBuffer,
+            UINT64 SrcOffset,
+            UINT64 NumBytes);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, CopyTextureRegion)
+        void ( STDMETHODCALLTYPE *CopyTextureRegion )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  const D3D12_TEXTURE_COPY_LOCATION *pDst,
+            UINT DstX,
+            UINT DstY,
+            UINT DstZ,
+            /* [annotation] */ 
+            _In_  const D3D12_TEXTURE_COPY_LOCATION *pSrc,
+            /* [annotation] */ 
+            _In_opt_  const D3D12_BOX *pSrcBox);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, CopyResource)
+        void ( STDMETHODCALLTYPE *CopyResource )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pDstResource,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pSrcResource);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, CopyTiles)
+        void ( STDMETHODCALLTYPE *CopyTiles )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pTiledResource,
+            /* [annotation] */ 
+            _In_  const D3D12_TILED_RESOURCE_COORDINATE *pTileRegionStartCoordinate,
+            /* [annotation] */ 
+            _In_  const D3D12_TILE_REGION_SIZE *pTileRegionSize,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pBuffer,
+            UINT64 BufferStartOffsetInBytes,
+            D3D12_TILE_COPY_FLAGS Flags);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, ResolveSubresource)
+        void ( STDMETHODCALLTYPE *ResolveSubresource )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pDstResource,
+            /* [annotation] */ 
+            _In_  UINT DstSubresource,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pSrcResource,
+            /* [annotation] */ 
+            _In_  UINT SrcSubresource,
+            /* [annotation] */ 
+            _In_  DXGI_FORMAT Format);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, IASetPrimitiveTopology)
+        void ( STDMETHODCALLTYPE *IASetPrimitiveTopology )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  D3D12_PRIMITIVE_TOPOLOGY PrimitiveTopology);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, RSSetViewports)
+        void ( STDMETHODCALLTYPE *RSSetViewports )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_range_(0, D3D12_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE)  UINT NumViewports,
+            /* [annotation] */ 
+            _In_reads_( NumViewports)  const D3D12_VIEWPORT *pViewports);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, RSSetScissorRects)
+        void ( STDMETHODCALLTYPE *RSSetScissorRects )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_range_(0, D3D12_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE)  UINT NumRects,
+            /* [annotation] */ 
+            _In_reads_( NumRects)  const D3D12_RECT *pRects);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, OMSetBlendFactor)
+        void ( STDMETHODCALLTYPE *OMSetBlendFactor )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_reads_opt_(4)  const FLOAT BlendFactor[ 4 ]);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, OMSetStencilRef)
+        void ( STDMETHODCALLTYPE *OMSetStencilRef )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT StencilRef);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetPipelineState)
+        void ( STDMETHODCALLTYPE *SetPipelineState )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12PipelineState *pPipelineState);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, ResourceBarrier)
+        void ( STDMETHODCALLTYPE *ResourceBarrier )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT NumBarriers,
+            /* [annotation] */ 
+            _In_reads_(NumBarriers)  const D3D12_RESOURCE_BARRIER *pBarriers);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, ExecuteBundle)
+        void ( STDMETHODCALLTYPE *ExecuteBundle )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12GraphicsCommandList *pCommandList);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetDescriptorHeaps)
+        void ( STDMETHODCALLTYPE *SetDescriptorHeaps )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT NumDescriptorHeaps,
+            /* [annotation] */ 
+            _In_reads_(NumDescriptorHeaps)  ID3D12DescriptorHeap *const *ppDescriptorHeaps);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetComputeRootSignature)
+        void ( STDMETHODCALLTYPE *SetComputeRootSignature )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_opt_  ID3D12RootSignature *pRootSignature);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetGraphicsRootSignature)
+        void ( STDMETHODCALLTYPE *SetGraphicsRootSignature )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_opt_  ID3D12RootSignature *pRootSignature);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetComputeRootDescriptorTable)
+        void ( STDMETHODCALLTYPE *SetComputeRootDescriptorTable )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT RootParameterIndex,
+            /* [annotation] */ 
+            _In_  D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetGraphicsRootDescriptorTable)
+        void ( STDMETHODCALLTYPE *SetGraphicsRootDescriptorTable )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT RootParameterIndex,
+            /* [annotation] */ 
+            _In_  D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetComputeRoot32BitConstant)
+        void ( STDMETHODCALLTYPE *SetComputeRoot32BitConstant )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT RootParameterIndex,
+            /* [annotation] */ 
+            _In_  UINT SrcData,
+            /* [annotation] */ 
+            _In_  UINT DestOffsetIn32BitValues);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetGraphicsRoot32BitConstant)
+        void ( STDMETHODCALLTYPE *SetGraphicsRoot32BitConstant )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT RootParameterIndex,
+            /* [annotation] */ 
+            _In_  UINT SrcData,
+            /* [annotation] */ 
+            _In_  UINT DestOffsetIn32BitValues);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetComputeRoot32BitConstants)
+        void ( STDMETHODCALLTYPE *SetComputeRoot32BitConstants )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT RootParameterIndex,
+            /* [annotation] */ 
+            _In_  UINT Num32BitValuesToSet,
+            /* [annotation] */ 
+            _In_reads_(Num32BitValuesToSet*sizeof(UINT))  const void *pSrcData,
+            /* [annotation] */ 
+            _In_  UINT DestOffsetIn32BitValues);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetGraphicsRoot32BitConstants)
+        void ( STDMETHODCALLTYPE *SetGraphicsRoot32BitConstants )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT RootParameterIndex,
+            /* [annotation] */ 
+            _In_  UINT Num32BitValuesToSet,
+            /* [annotation] */ 
+            _In_reads_(Num32BitValuesToSet*sizeof(UINT))  const void *pSrcData,
+            /* [annotation] */ 
+            _In_  UINT DestOffsetIn32BitValues);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetComputeRootConstantBufferView)
+        void ( STDMETHODCALLTYPE *SetComputeRootConstantBufferView )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT RootParameterIndex,
+            /* [annotation] */ 
+            _In_  D3D12_GPU_VIRTUAL_ADDRESS BufferLocation);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetGraphicsRootConstantBufferView)
+        void ( STDMETHODCALLTYPE *SetGraphicsRootConstantBufferView )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT RootParameterIndex,
+            /* [annotation] */ 
+            _In_  D3D12_GPU_VIRTUAL_ADDRESS BufferLocation);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetComputeRootShaderResourceView)
+        void ( STDMETHODCALLTYPE *SetComputeRootShaderResourceView )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT RootParameterIndex,
+            /* [annotation] */ 
+            _In_  D3D12_GPU_VIRTUAL_ADDRESS BufferLocation);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetGraphicsRootShaderResourceView)
+        void ( STDMETHODCALLTYPE *SetGraphicsRootShaderResourceView )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT RootParameterIndex,
+            /* [annotation] */ 
+            _In_  D3D12_GPU_VIRTUAL_ADDRESS BufferLocation);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetComputeRootUnorderedAccessView)
+        void ( STDMETHODCALLTYPE *SetComputeRootUnorderedAccessView )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT RootParameterIndex,
+            /* [annotation] */ 
+            _In_  D3D12_GPU_VIRTUAL_ADDRESS BufferLocation);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetGraphicsRootUnorderedAccessView)
+        void ( STDMETHODCALLTYPE *SetGraphicsRootUnorderedAccessView )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT RootParameterIndex,
+            /* [annotation] */ 
+            _In_  D3D12_GPU_VIRTUAL_ADDRESS BufferLocation);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, IASetIndexBuffer)
+        void ( STDMETHODCALLTYPE *IASetIndexBuffer )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_opt_  const D3D12_INDEX_BUFFER_VIEW *pView);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, IASetVertexBuffers)
+        void ( STDMETHODCALLTYPE *IASetVertexBuffers )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT StartSlot,
+            /* [annotation] */ 
+            _In_  UINT NumViews,
+            /* [annotation] */ 
+            _In_reads_opt_(NumViews)  const D3D12_VERTEX_BUFFER_VIEW *pViews);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SOSetTargets)
+        void ( STDMETHODCALLTYPE *SOSetTargets )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT StartSlot,
+            /* [annotation] */ 
+            _In_  UINT NumViews,
+            /* [annotation] */ 
+            _In_reads_opt_(NumViews)  const D3D12_STREAM_OUTPUT_BUFFER_VIEW *pViews);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, OMSetRenderTargets)
+        void ( STDMETHODCALLTYPE *OMSetRenderTargets )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT NumRenderTargetDescriptors,
+            /* [annotation] */ 
+            _In_opt_  const D3D12_CPU_DESCRIPTOR_HANDLE *pRenderTargetDescriptors,
+            /* [annotation] */ 
+            _In_  BOOL RTsSingleHandleToDescriptorRange,
+            /* [annotation] */ 
+            _In_opt_  const D3D12_CPU_DESCRIPTOR_HANDLE *pDepthStencilDescriptor);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, ClearDepthStencilView)
+        void ( STDMETHODCALLTYPE *ClearDepthStencilView )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  D3D12_CPU_DESCRIPTOR_HANDLE DepthStencilView,
+            /* [annotation] */ 
+            _In_  D3D12_CLEAR_FLAGS ClearFlags,
+            /* [annotation] */ 
+            _In_  FLOAT Depth,
+            /* [annotation] */ 
+            _In_  UINT8 Stencil,
+            /* [annotation] */ 
+            _In_  UINT NumRects,
+            /* [annotation] */ 
+            _In_reads_(NumRects)  const D3D12_RECT *pRects);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, ClearRenderTargetView)
+        void ( STDMETHODCALLTYPE *ClearRenderTargetView )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView,
+            /* [annotation] */ 
+            _In_  const FLOAT ColorRGBA[ 4 ],
+            /* [annotation] */ 
+            _In_  UINT NumRects,
+            /* [annotation] */ 
+            _In_reads_(NumRects)  const D3D12_RECT *pRects);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, ClearUnorderedAccessViewUint)
+        void ( STDMETHODCALLTYPE *ClearUnorderedAccessViewUint )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap,
+            /* [annotation] */ 
+            _In_  D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pResource,
+            /* [annotation] */ 
+            _In_  const UINT Values[ 4 ],
+            /* [annotation] */ 
+            _In_  UINT NumRects,
+            /* [annotation] */ 
+            _In_reads_(NumRects)  const D3D12_RECT *pRects);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, ClearUnorderedAccessViewFloat)
+        void ( STDMETHODCALLTYPE *ClearUnorderedAccessViewFloat )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap,
+            /* [annotation] */ 
+            _In_  D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pResource,
+            /* [annotation] */ 
+            _In_  const FLOAT Values[ 4 ],
+            /* [annotation] */ 
+            _In_  UINT NumRects,
+            /* [annotation] */ 
+            _In_reads_(NumRects)  const D3D12_RECT *pRects);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, DiscardResource)
+        void ( STDMETHODCALLTYPE *DiscardResource )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pResource,
+            /* [annotation] */ 
+            _In_opt_  const D3D12_DISCARD_REGION *pRegion);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, BeginQuery)
+        void ( STDMETHODCALLTYPE *BeginQuery )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12QueryHeap *pQueryHeap,
+            /* [annotation] */ 
+            _In_  D3D12_QUERY_TYPE Type,
+            /* [annotation] */ 
+            _In_  UINT Index);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, EndQuery)
+        void ( STDMETHODCALLTYPE *EndQuery )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12QueryHeap *pQueryHeap,
+            /* [annotation] */ 
+            _In_  D3D12_QUERY_TYPE Type,
+            /* [annotation] */ 
+            _In_  UINT Index);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, ResolveQueryData)
+        void ( STDMETHODCALLTYPE *ResolveQueryData )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12QueryHeap *pQueryHeap,
+            /* [annotation] */ 
+            _In_  D3D12_QUERY_TYPE Type,
+            /* [annotation] */ 
+            _In_  UINT StartIndex,
+            /* [annotation] */ 
+            _In_  UINT NumQueries,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pDestinationBuffer,
+            /* [annotation] */ 
+            _In_  UINT64 AlignedDestinationBufferOffset);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetPredication)
+        void ( STDMETHODCALLTYPE *SetPredication )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_opt_  ID3D12Resource *pBuffer,
+            /* [annotation] */ 
+            _In_  UINT64 AlignedBufferOffset,
+            /* [annotation] */ 
+            _In_  D3D12_PREDICATION_OP Operation);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, SetMarker)
+        void ( STDMETHODCALLTYPE *SetMarker )( 
+            ID3D12GraphicsCommandListPreview * This,
+            UINT Metadata,
+            /* [annotation] */ 
+            _In_reads_bytes_opt_(Size)  const void *pData,
+            UINT Size);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, BeginEvent)
+        void ( STDMETHODCALLTYPE *BeginEvent )( 
+            ID3D12GraphicsCommandListPreview * This,
+            UINT Metadata,
+            /* [annotation] */ 
+            _In_reads_bytes_opt_(Size)  const void *pData,
+            UINT Size);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, EndEvent)
+        void ( STDMETHODCALLTYPE *EndEvent )( 
+            ID3D12GraphicsCommandListPreview * This);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList, ExecuteIndirect)
+        void ( STDMETHODCALLTYPE *ExecuteIndirect )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12CommandSignature *pCommandSignature,
+            /* [annotation] */ 
+            _In_  UINT MaxCommandCount,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pArgumentBuffer,
+            /* [annotation] */ 
+            _In_  UINT64 ArgumentBufferOffset,
+            /* [annotation] */ 
+            _In_opt_  ID3D12Resource *pCountBuffer,
+            /* [annotation] */ 
+            _In_  UINT64 CountBufferOffset);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList1, AtomicCopyBufferUINT)
+        void ( STDMETHODCALLTYPE *AtomicCopyBufferUINT )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pDstBuffer,
+            UINT64 DstOffset,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pSrcBuffer,
+            UINT64 SrcOffset,
+            UINT Dependencies,
+            /* [annotation] */ 
+            _In_reads_(Dependencies)  ID3D12Resource *const *ppDependentResources,
+            /* [annotation] */ 
+            _In_reads_(Dependencies)  const D3D12_SUBRESOURCE_RANGE_UINT64 *pDependentSubresourceRanges);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList1, AtomicCopyBufferUINT64)
+        void ( STDMETHODCALLTYPE *AtomicCopyBufferUINT64 )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pDstBuffer,
+            UINT64 DstOffset,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pSrcBuffer,
+            UINT64 SrcOffset,
+            UINT Dependencies,
+            /* [annotation] */ 
+            _In_reads_(Dependencies)  ID3D12Resource *const *ppDependentResources,
+            /* [annotation] */ 
+            _In_reads_(Dependencies)  const D3D12_SUBRESOURCE_RANGE_UINT64 *pDependentSubresourceRanges);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList1, OMSetDepthBounds)
+        void ( STDMETHODCALLTYPE *OMSetDepthBounds )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  FLOAT Min,
+            /* [annotation] */ 
+            _In_  FLOAT Max);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList1, SetSamplePositions)
+        void ( STDMETHODCALLTYPE *SetSamplePositions )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT NumSamplesPerPixel,
+            /* [annotation] */ 
+            _In_  UINT NumPixels,
+            /* [annotation] */ 
+            _In_reads_(NumSamplesPerPixel*NumPixels)  D3D12_SAMPLE_POSITION *pSamplePositions);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList1, ResolveSubresourceRegion)
+        void ( STDMETHODCALLTYPE *ResolveSubresourceRegion )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pDstResource,
+            /* [annotation] */ 
+            _In_  UINT DstSubresource,
+            /* [annotation] */ 
+            _In_  UINT DstX,
+            /* [annotation] */ 
+            _In_  UINT DstY,
+            /* [annotation] */ 
+            _In_  ID3D12Resource *pSrcResource,
+            /* [annotation] */ 
+            _In_  UINT SrcSubresource,
+            /* [annotation] */ 
+            _In_opt_  D3D12_RECT *pSrcRect,
+            /* [annotation] */ 
+            _In_  DXGI_FORMAT Format,
+            /* [annotation] */ 
+            _In_  D3D12_RESOLVE_MODE ResolveMode);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList1, SetViewInstanceMask)
+        void ( STDMETHODCALLTYPE *SetViewInstanceMask )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT Mask);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList2, WriteBufferImmediate)
+        void ( STDMETHODCALLTYPE *WriteBufferImmediate )( 
+            ID3D12GraphicsCommandListPreview * This,
+            UINT Count,
+            /* [annotation] */ 
+            _In_reads_(Count)  const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *pParams,
+            /* [annotation] */ 
+            _In_reads_opt_(Count)  const D3D12_WRITEBUFFERIMMEDIATE_MODE *pModes);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList3, SetProtectedResourceSession)
+        void ( STDMETHODCALLTYPE *SetProtectedResourceSession )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_opt_  ID3D12ProtectedResourceSession *pProtectedResourceSession);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList4, BeginRenderPass)
+        void ( STDMETHODCALLTYPE *BeginRenderPass )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT NumRenderTargets,
+            /* [annotation] */ 
+            _In_reads_opt_(NumRenderTargets)  const D3D12_RENDER_PASS_RENDER_TARGET_DESC *pRenderTargets,
+            /* [annotation] */ 
+            _In_opt_  const D3D12_RENDER_PASS_DEPTH_STENCIL_DESC *pDepthStencil,
+            D3D12_RENDER_PASS_FLAGS Flags);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList4, EndRenderPass)
+        void ( STDMETHODCALLTYPE *EndRenderPass )( 
+            ID3D12GraphicsCommandListPreview * This);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList4, InitializeMetaCommand)
+        void ( STDMETHODCALLTYPE *InitializeMetaCommand )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12MetaCommand *pMetaCommand,
+            /* [annotation] */ 
+            _In_reads_bytes_opt_(InitializationParametersDataSizeInBytes)  const void *pInitializationParametersData,
+            /* [annotation] */ 
+            _In_  SIZE_T InitializationParametersDataSizeInBytes);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList4, ExecuteMetaCommand)
+        void ( STDMETHODCALLTYPE *ExecuteMetaCommand )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12MetaCommand *pMetaCommand,
+            /* [annotation] */ 
+            _In_reads_bytes_opt_(ExecutionParametersDataSizeInBytes)  const void *pExecutionParametersData,
+            /* [annotation] */ 
+            _In_  SIZE_T ExecutionParametersDataSizeInBytes);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList4, BuildRaytracingAccelerationStructure)
+        void ( STDMETHODCALLTYPE *BuildRaytracingAccelerationStructure )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  const D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC *pDesc,
+            /* [annotation] */ 
+            _In_  UINT NumPostbuildInfoDescs,
+            /* [annotation] */ 
+            _In_reads_opt_(NumPostbuildInfoDescs)  const D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC *pPostbuildInfoDescs);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList4, EmitRaytracingAccelerationStructurePostbuildInfo)
+        void ( STDMETHODCALLTYPE *EmitRaytracingAccelerationStructurePostbuildInfo )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  const D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC *pDesc,
+            /* [annotation] */ 
+            _In_  UINT NumSourceAccelerationStructures,
+            /* [annotation] */ 
+            _In_reads_( NumSourceAccelerationStructures )  const D3D12_GPU_VIRTUAL_ADDRESS *pSourceAccelerationStructureData);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList4, CopyRaytracingAccelerationStructure)
+        void ( STDMETHODCALLTYPE *CopyRaytracingAccelerationStructure )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  D3D12_GPU_VIRTUAL_ADDRESS DestAccelerationStructureData,
+            /* [annotation] */ 
+            _In_  D3D12_GPU_VIRTUAL_ADDRESS SourceAccelerationStructureData,
+            /* [annotation] */ 
+            _In_  D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE Mode);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList4, SetPipelineState1)
+        void ( STDMETHODCALLTYPE *SetPipelineState1 )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  ID3D12StateObject *pStateObject);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList4, DispatchRays)
+        void ( STDMETHODCALLTYPE *DispatchRays )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  const D3D12_DISPATCH_RAYS_DESC *pDesc);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList5, RSSetShadingRate)
+        void ( STDMETHODCALLTYPE *RSSetShadingRate )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  D3D12_SHADING_RATE baseShadingRate,
+            /* [annotation] */ 
+            _In_reads_opt_(D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT)  const D3D12_SHADING_RATE_COMBINER *combiners);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList5, RSSetShadingRateImage)
+        void ( STDMETHODCALLTYPE *RSSetShadingRateImage )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_opt_  ID3D12Resource *shadingRateImage);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList6, DispatchMesh)
+        void ( STDMETHODCALLTYPE *DispatchMesh )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT ThreadGroupCountX,
+            /* [annotation] */ 
+            _In_  UINT ThreadGroupCountY,
+            /* [annotation] */ 
+            _In_  UINT ThreadGroupCountZ);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList7, Barrier)
+        void ( STDMETHODCALLTYPE *Barrier )( 
+            ID3D12GraphicsCommandListPreview * This,
+            UINT32 NumBarrierGroups,
+            /* [annotation] */ 
+            _In_reads_(NumBarrierGroups)  const D3D12_BARRIER_GROUP *pBarrierGroups);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList8, OMSetFrontAndBackStencilRef)
+        void ( STDMETHODCALLTYPE *OMSetFrontAndBackStencilRef )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT FrontStencilRef,
+            /* [annotation] */ 
+            _In_  UINT BackStencilRef);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList9, RSSetDepthBias)
+        void ( STDMETHODCALLTYPE *RSSetDepthBias )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  FLOAT DepthBias,
+            /* [annotation] */ 
+            _In_  FLOAT DepthBiasClamp,
+            /* [annotation] */ 
+            _In_  FLOAT SlopeScaledDepthBias);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList9, IASetIndexBufferStripCutValue)
+        void ( STDMETHODCALLTYPE *IASetIndexBufferStripCutValue )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  D3D12_INDEX_BUFFER_STRIP_CUT_VALUE IBStripCutValue);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList10, SetProgram)
+        void ( STDMETHODCALLTYPE *SetProgram )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  const D3D12_SET_PROGRAM_DESC *pDesc);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandList10, DispatchGraph)
+        void ( STDMETHODCALLTYPE *DispatchGraph )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  const D3D12_DISPATCH_GRAPH_DESC *pDesc);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandListPreview, SetWorkGraphMaximumGPUInputRecords)
+        void ( STDMETHODCALLTYPE *SetWorkGraphMaximumGPUInputRecords )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  UINT MaxRecords,
+            /* [annotation] */ 
+            _In_  UINT MaxNodeInputs);
+        
+        DECLSPEC_XFGVIRT(ID3D12GraphicsCommandListPreview, ConvertLinearAlgebraMatrix)
+        void ( STDMETHODCALLTYPE *ConvertLinearAlgebraMatrix )( 
+            ID3D12GraphicsCommandListPreview * This,
+            /* [annotation] */ 
+            _In_  const D3D12_LINEAR_ALGEBRA_MATRIX_CONVERSION_INFO *pDesc,
+            /* [annotation] */ 
+            _In_  UINT DescCount);
+        
+        END_INTERFACE
+    } ID3D12GraphicsCommandListPreviewVtbl;
+
+    interface ID3D12GraphicsCommandListPreview
+    {
+        CONST_VTBL struct ID3D12GraphicsCommandListPreviewVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ID3D12GraphicsCommandListPreview_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ID3D12GraphicsCommandListPreview_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ID3D12GraphicsCommandListPreview_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_GetPrivateData(This,guid,pDataSize,pData)	\
+    ( (This)->lpVtbl -> GetPrivateData(This,guid,pDataSize,pData) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetPrivateData(This,guid,DataSize,pData)	\
+    ( (This)->lpVtbl -> SetPrivateData(This,guid,DataSize,pData) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetPrivateDataInterface(This,guid,pData)	\
+    ( (This)->lpVtbl -> SetPrivateDataInterface(This,guid,pData) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetName(This,Name)	\
+    ( (This)->lpVtbl -> SetName(This,Name) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_GetDevice(This,riid,ppvDevice)	\
+    ( (This)->lpVtbl -> GetDevice(This,riid,ppvDevice) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_GetType(This)	\
+    ( (This)->lpVtbl -> GetType(This) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_Close(This)	\
+    ( (This)->lpVtbl -> Close(This) ) 
+
+#define ID3D12GraphicsCommandListPreview_Reset(This,pAllocator,pInitialState)	\
+    ( (This)->lpVtbl -> Reset(This,pAllocator,pInitialState) ) 
+
+#define ID3D12GraphicsCommandListPreview_ClearState(This,pPipelineState)	\
+    ( (This)->lpVtbl -> ClearState(This,pPipelineState) ) 
+
+#define ID3D12GraphicsCommandListPreview_DrawInstanced(This,VertexCountPerInstance,InstanceCount,StartVertexLocation,StartInstanceLocation)	\
+    ( (This)->lpVtbl -> DrawInstanced(This,VertexCountPerInstance,InstanceCount,StartVertexLocation,StartInstanceLocation) ) 
+
+#define ID3D12GraphicsCommandListPreview_DrawIndexedInstanced(This,IndexCountPerInstance,InstanceCount,StartIndexLocation,BaseVertexLocation,StartInstanceLocation)	\
+    ( (This)->lpVtbl -> DrawIndexedInstanced(This,IndexCountPerInstance,InstanceCount,StartIndexLocation,BaseVertexLocation,StartInstanceLocation) ) 
+
+#define ID3D12GraphicsCommandListPreview_Dispatch(This,ThreadGroupCountX,ThreadGroupCountY,ThreadGroupCountZ)	\
+    ( (This)->lpVtbl -> Dispatch(This,ThreadGroupCountX,ThreadGroupCountY,ThreadGroupCountZ) ) 
+
+#define ID3D12GraphicsCommandListPreview_CopyBufferRegion(This,pDstBuffer,DstOffset,pSrcBuffer,SrcOffset,NumBytes)	\
+    ( (This)->lpVtbl -> CopyBufferRegion(This,pDstBuffer,DstOffset,pSrcBuffer,SrcOffset,NumBytes) ) 
+
+#define ID3D12GraphicsCommandListPreview_CopyTextureRegion(This,pDst,DstX,DstY,DstZ,pSrc,pSrcBox)	\
+    ( (This)->lpVtbl -> CopyTextureRegion(This,pDst,DstX,DstY,DstZ,pSrc,pSrcBox) ) 
+
+#define ID3D12GraphicsCommandListPreview_CopyResource(This,pDstResource,pSrcResource)	\
+    ( (This)->lpVtbl -> CopyResource(This,pDstResource,pSrcResource) ) 
+
+#define ID3D12GraphicsCommandListPreview_CopyTiles(This,pTiledResource,pTileRegionStartCoordinate,pTileRegionSize,pBuffer,BufferStartOffsetInBytes,Flags)	\
+    ( (This)->lpVtbl -> CopyTiles(This,pTiledResource,pTileRegionStartCoordinate,pTileRegionSize,pBuffer,BufferStartOffsetInBytes,Flags) ) 
+
+#define ID3D12GraphicsCommandListPreview_ResolveSubresource(This,pDstResource,DstSubresource,pSrcResource,SrcSubresource,Format)	\
+    ( (This)->lpVtbl -> ResolveSubresource(This,pDstResource,DstSubresource,pSrcResource,SrcSubresource,Format) ) 
+
+#define ID3D12GraphicsCommandListPreview_IASetPrimitiveTopology(This,PrimitiveTopology)	\
+    ( (This)->lpVtbl -> IASetPrimitiveTopology(This,PrimitiveTopology) ) 
+
+#define ID3D12GraphicsCommandListPreview_RSSetViewports(This,NumViewports,pViewports)	\
+    ( (This)->lpVtbl -> RSSetViewports(This,NumViewports,pViewports) ) 
+
+#define ID3D12GraphicsCommandListPreview_RSSetScissorRects(This,NumRects,pRects)	\
+    ( (This)->lpVtbl -> RSSetScissorRects(This,NumRects,pRects) ) 
+
+#define ID3D12GraphicsCommandListPreview_OMSetBlendFactor(This,BlendFactor)	\
+    ( (This)->lpVtbl -> OMSetBlendFactor(This,BlendFactor) ) 
+
+#define ID3D12GraphicsCommandListPreview_OMSetStencilRef(This,StencilRef)	\
+    ( (This)->lpVtbl -> OMSetStencilRef(This,StencilRef) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetPipelineState(This,pPipelineState)	\
+    ( (This)->lpVtbl -> SetPipelineState(This,pPipelineState) ) 
+
+#define ID3D12GraphicsCommandListPreview_ResourceBarrier(This,NumBarriers,pBarriers)	\
+    ( (This)->lpVtbl -> ResourceBarrier(This,NumBarriers,pBarriers) ) 
+
+#define ID3D12GraphicsCommandListPreview_ExecuteBundle(This,pCommandList)	\
+    ( (This)->lpVtbl -> ExecuteBundle(This,pCommandList) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetDescriptorHeaps(This,NumDescriptorHeaps,ppDescriptorHeaps)	\
+    ( (This)->lpVtbl -> SetDescriptorHeaps(This,NumDescriptorHeaps,ppDescriptorHeaps) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetComputeRootSignature(This,pRootSignature)	\
+    ( (This)->lpVtbl -> SetComputeRootSignature(This,pRootSignature) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetGraphicsRootSignature(This,pRootSignature)	\
+    ( (This)->lpVtbl -> SetGraphicsRootSignature(This,pRootSignature) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetComputeRootDescriptorTable(This,RootParameterIndex,BaseDescriptor)	\
+    ( (This)->lpVtbl -> SetComputeRootDescriptorTable(This,RootParameterIndex,BaseDescriptor) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetGraphicsRootDescriptorTable(This,RootParameterIndex,BaseDescriptor)	\
+    ( (This)->lpVtbl -> SetGraphicsRootDescriptorTable(This,RootParameterIndex,BaseDescriptor) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetComputeRoot32BitConstant(This,RootParameterIndex,SrcData,DestOffsetIn32BitValues)	\
+    ( (This)->lpVtbl -> SetComputeRoot32BitConstant(This,RootParameterIndex,SrcData,DestOffsetIn32BitValues) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetGraphicsRoot32BitConstant(This,RootParameterIndex,SrcData,DestOffsetIn32BitValues)	\
+    ( (This)->lpVtbl -> SetGraphicsRoot32BitConstant(This,RootParameterIndex,SrcData,DestOffsetIn32BitValues) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetComputeRoot32BitConstants(This,RootParameterIndex,Num32BitValuesToSet,pSrcData,DestOffsetIn32BitValues)	\
+    ( (This)->lpVtbl -> SetComputeRoot32BitConstants(This,RootParameterIndex,Num32BitValuesToSet,pSrcData,DestOffsetIn32BitValues) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetGraphicsRoot32BitConstants(This,RootParameterIndex,Num32BitValuesToSet,pSrcData,DestOffsetIn32BitValues)	\
+    ( (This)->lpVtbl -> SetGraphicsRoot32BitConstants(This,RootParameterIndex,Num32BitValuesToSet,pSrcData,DestOffsetIn32BitValues) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetComputeRootConstantBufferView(This,RootParameterIndex,BufferLocation)	\
+    ( (This)->lpVtbl -> SetComputeRootConstantBufferView(This,RootParameterIndex,BufferLocation) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetGraphicsRootConstantBufferView(This,RootParameterIndex,BufferLocation)	\
+    ( (This)->lpVtbl -> SetGraphicsRootConstantBufferView(This,RootParameterIndex,BufferLocation) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetComputeRootShaderResourceView(This,RootParameterIndex,BufferLocation)	\
+    ( (This)->lpVtbl -> SetComputeRootShaderResourceView(This,RootParameterIndex,BufferLocation) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetGraphicsRootShaderResourceView(This,RootParameterIndex,BufferLocation)	\
+    ( (This)->lpVtbl -> SetGraphicsRootShaderResourceView(This,RootParameterIndex,BufferLocation) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetComputeRootUnorderedAccessView(This,RootParameterIndex,BufferLocation)	\
+    ( (This)->lpVtbl -> SetComputeRootUnorderedAccessView(This,RootParameterIndex,BufferLocation) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetGraphicsRootUnorderedAccessView(This,RootParameterIndex,BufferLocation)	\
+    ( (This)->lpVtbl -> SetGraphicsRootUnorderedAccessView(This,RootParameterIndex,BufferLocation) ) 
+
+#define ID3D12GraphicsCommandListPreview_IASetIndexBuffer(This,pView)	\
+    ( (This)->lpVtbl -> IASetIndexBuffer(This,pView) ) 
+
+#define ID3D12GraphicsCommandListPreview_IASetVertexBuffers(This,StartSlot,NumViews,pViews)	\
+    ( (This)->lpVtbl -> IASetVertexBuffers(This,StartSlot,NumViews,pViews) ) 
+
+#define ID3D12GraphicsCommandListPreview_SOSetTargets(This,StartSlot,NumViews,pViews)	\
+    ( (This)->lpVtbl -> SOSetTargets(This,StartSlot,NumViews,pViews) ) 
+
+#define ID3D12GraphicsCommandListPreview_OMSetRenderTargets(This,NumRenderTargetDescriptors,pRenderTargetDescriptors,RTsSingleHandleToDescriptorRange,pDepthStencilDescriptor)	\
+    ( (This)->lpVtbl -> OMSetRenderTargets(This,NumRenderTargetDescriptors,pRenderTargetDescriptors,RTsSingleHandleToDescriptorRange,pDepthStencilDescriptor) ) 
+
+#define ID3D12GraphicsCommandListPreview_ClearDepthStencilView(This,DepthStencilView,ClearFlags,Depth,Stencil,NumRects,pRects)	\
+    ( (This)->lpVtbl -> ClearDepthStencilView(This,DepthStencilView,ClearFlags,Depth,Stencil,NumRects,pRects) ) 
+
+#define ID3D12GraphicsCommandListPreview_ClearRenderTargetView(This,RenderTargetView,ColorRGBA,NumRects,pRects)	\
+    ( (This)->lpVtbl -> ClearRenderTargetView(This,RenderTargetView,ColorRGBA,NumRects,pRects) ) 
+
+#define ID3D12GraphicsCommandListPreview_ClearUnorderedAccessViewUint(This,ViewGPUHandleInCurrentHeap,ViewCPUHandle,pResource,Values,NumRects,pRects)	\
+    ( (This)->lpVtbl -> ClearUnorderedAccessViewUint(This,ViewGPUHandleInCurrentHeap,ViewCPUHandle,pResource,Values,NumRects,pRects) ) 
+
+#define ID3D12GraphicsCommandListPreview_ClearUnorderedAccessViewFloat(This,ViewGPUHandleInCurrentHeap,ViewCPUHandle,pResource,Values,NumRects,pRects)	\
+    ( (This)->lpVtbl -> ClearUnorderedAccessViewFloat(This,ViewGPUHandleInCurrentHeap,ViewCPUHandle,pResource,Values,NumRects,pRects) ) 
+
+#define ID3D12GraphicsCommandListPreview_DiscardResource(This,pResource,pRegion)	\
+    ( (This)->lpVtbl -> DiscardResource(This,pResource,pRegion) ) 
+
+#define ID3D12GraphicsCommandListPreview_BeginQuery(This,pQueryHeap,Type,Index)	\
+    ( (This)->lpVtbl -> BeginQuery(This,pQueryHeap,Type,Index) ) 
+
+#define ID3D12GraphicsCommandListPreview_EndQuery(This,pQueryHeap,Type,Index)	\
+    ( (This)->lpVtbl -> EndQuery(This,pQueryHeap,Type,Index) ) 
+
+#define ID3D12GraphicsCommandListPreview_ResolveQueryData(This,pQueryHeap,Type,StartIndex,NumQueries,pDestinationBuffer,AlignedDestinationBufferOffset)	\
+    ( (This)->lpVtbl -> ResolveQueryData(This,pQueryHeap,Type,StartIndex,NumQueries,pDestinationBuffer,AlignedDestinationBufferOffset) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetPredication(This,pBuffer,AlignedBufferOffset,Operation)	\
+    ( (This)->lpVtbl -> SetPredication(This,pBuffer,AlignedBufferOffset,Operation) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetMarker(This,Metadata,pData,Size)	\
+    ( (This)->lpVtbl -> SetMarker(This,Metadata,pData,Size) ) 
+
+#define ID3D12GraphicsCommandListPreview_BeginEvent(This,Metadata,pData,Size)	\
+    ( (This)->lpVtbl -> BeginEvent(This,Metadata,pData,Size) ) 
+
+#define ID3D12GraphicsCommandListPreview_EndEvent(This)	\
+    ( (This)->lpVtbl -> EndEvent(This) ) 
+
+#define ID3D12GraphicsCommandListPreview_ExecuteIndirect(This,pCommandSignature,MaxCommandCount,pArgumentBuffer,ArgumentBufferOffset,pCountBuffer,CountBufferOffset)	\
+    ( (This)->lpVtbl -> ExecuteIndirect(This,pCommandSignature,MaxCommandCount,pArgumentBuffer,ArgumentBufferOffset,pCountBuffer,CountBufferOffset) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_AtomicCopyBufferUINT(This,pDstBuffer,DstOffset,pSrcBuffer,SrcOffset,Dependencies,ppDependentResources,pDependentSubresourceRanges)	\
+    ( (This)->lpVtbl -> AtomicCopyBufferUINT(This,pDstBuffer,DstOffset,pSrcBuffer,SrcOffset,Dependencies,ppDependentResources,pDependentSubresourceRanges) ) 
+
+#define ID3D12GraphicsCommandListPreview_AtomicCopyBufferUINT64(This,pDstBuffer,DstOffset,pSrcBuffer,SrcOffset,Dependencies,ppDependentResources,pDependentSubresourceRanges)	\
+    ( (This)->lpVtbl -> AtomicCopyBufferUINT64(This,pDstBuffer,DstOffset,pSrcBuffer,SrcOffset,Dependencies,ppDependentResources,pDependentSubresourceRanges) ) 
+
+#define ID3D12GraphicsCommandListPreview_OMSetDepthBounds(This,Min,Max)	\
+    ( (This)->lpVtbl -> OMSetDepthBounds(This,Min,Max) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetSamplePositions(This,NumSamplesPerPixel,NumPixels,pSamplePositions)	\
+    ( (This)->lpVtbl -> SetSamplePositions(This,NumSamplesPerPixel,NumPixels,pSamplePositions) ) 
+
+#define ID3D12GraphicsCommandListPreview_ResolveSubresourceRegion(This,pDstResource,DstSubresource,DstX,DstY,pSrcResource,SrcSubresource,pSrcRect,Format,ResolveMode)	\
+    ( (This)->lpVtbl -> ResolveSubresourceRegion(This,pDstResource,DstSubresource,DstX,DstY,pSrcResource,SrcSubresource,pSrcRect,Format,ResolveMode) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetViewInstanceMask(This,Mask)	\
+    ( (This)->lpVtbl -> SetViewInstanceMask(This,Mask) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_WriteBufferImmediate(This,Count,pParams,pModes)	\
+    ( (This)->lpVtbl -> WriteBufferImmediate(This,Count,pParams,pModes) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_SetProtectedResourceSession(This,pProtectedResourceSession)	\
+    ( (This)->lpVtbl -> SetProtectedResourceSession(This,pProtectedResourceSession) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_BeginRenderPass(This,NumRenderTargets,pRenderTargets,pDepthStencil,Flags)	\
+    ( (This)->lpVtbl -> BeginRenderPass(This,NumRenderTargets,pRenderTargets,pDepthStencil,Flags) ) 
+
+#define ID3D12GraphicsCommandListPreview_EndRenderPass(This)	\
+    ( (This)->lpVtbl -> EndRenderPass(This) ) 
+
+#define ID3D12GraphicsCommandListPreview_InitializeMetaCommand(This,pMetaCommand,pInitializationParametersData,InitializationParametersDataSizeInBytes)	\
+    ( (This)->lpVtbl -> InitializeMetaCommand(This,pMetaCommand,pInitializationParametersData,InitializationParametersDataSizeInBytes) ) 
+
+#define ID3D12GraphicsCommandListPreview_ExecuteMetaCommand(This,pMetaCommand,pExecutionParametersData,ExecutionParametersDataSizeInBytes)	\
+    ( (This)->lpVtbl -> ExecuteMetaCommand(This,pMetaCommand,pExecutionParametersData,ExecutionParametersDataSizeInBytes) ) 
+
+#define ID3D12GraphicsCommandListPreview_BuildRaytracingAccelerationStructure(This,pDesc,NumPostbuildInfoDescs,pPostbuildInfoDescs)	\
+    ( (This)->lpVtbl -> BuildRaytracingAccelerationStructure(This,pDesc,NumPostbuildInfoDescs,pPostbuildInfoDescs) ) 
+
+#define ID3D12GraphicsCommandListPreview_EmitRaytracingAccelerationStructurePostbuildInfo(This,pDesc,NumSourceAccelerationStructures,pSourceAccelerationStructureData)	\
+    ( (This)->lpVtbl -> EmitRaytracingAccelerationStructurePostbuildInfo(This,pDesc,NumSourceAccelerationStructures,pSourceAccelerationStructureData) ) 
+
+#define ID3D12GraphicsCommandListPreview_CopyRaytracingAccelerationStructure(This,DestAccelerationStructureData,SourceAccelerationStructureData,Mode)	\
+    ( (This)->lpVtbl -> CopyRaytracingAccelerationStructure(This,DestAccelerationStructureData,SourceAccelerationStructureData,Mode) ) 
+
+#define ID3D12GraphicsCommandListPreview_SetPipelineState1(This,pStateObject)	\
+    ( (This)->lpVtbl -> SetPipelineState1(This,pStateObject) ) 
+
+#define ID3D12GraphicsCommandListPreview_DispatchRays(This,pDesc)	\
+    ( (This)->lpVtbl -> DispatchRays(This,pDesc) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_RSSetShadingRate(This,baseShadingRate,combiners)	\
+    ( (This)->lpVtbl -> RSSetShadingRate(This,baseShadingRate,combiners) ) 
+
+#define ID3D12GraphicsCommandListPreview_RSSetShadingRateImage(This,shadingRateImage)	\
+    ( (This)->lpVtbl -> RSSetShadingRateImage(This,shadingRateImage) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_DispatchMesh(This,ThreadGroupCountX,ThreadGroupCountY,ThreadGroupCountZ)	\
+    ( (This)->lpVtbl -> DispatchMesh(This,ThreadGroupCountX,ThreadGroupCountY,ThreadGroupCountZ) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_Barrier(This,NumBarrierGroups,pBarrierGroups)	\
+    ( (This)->lpVtbl -> Barrier(This,NumBarrierGroups,pBarrierGroups) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_OMSetFrontAndBackStencilRef(This,FrontStencilRef,BackStencilRef)	\
+    ( (This)->lpVtbl -> OMSetFrontAndBackStencilRef(This,FrontStencilRef,BackStencilRef) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_RSSetDepthBias(This,DepthBias,DepthBiasClamp,SlopeScaledDepthBias)	\
+    ( (This)->lpVtbl -> RSSetDepthBias(This,DepthBias,DepthBiasClamp,SlopeScaledDepthBias) ) 
+
+#define ID3D12GraphicsCommandListPreview_IASetIndexBufferStripCutValue(This,IBStripCutValue)	\
+    ( (This)->lpVtbl -> IASetIndexBufferStripCutValue(This,IBStripCutValue) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_SetProgram(This,pDesc)	\
+    ( (This)->lpVtbl -> SetProgram(This,pDesc) ) 
+
+#define ID3D12GraphicsCommandListPreview_DispatchGraph(This,pDesc)	\
+    ( (This)->lpVtbl -> DispatchGraph(This,pDesc) ) 
+
+
+#define ID3D12GraphicsCommandListPreview_SetWorkGraphMaximumGPUInputRecords(This,MaxRecords,MaxNodeInputs)	\
+    ( (This)->lpVtbl -> SetWorkGraphMaximumGPUInputRecords(This,MaxRecords,MaxNodeInputs) ) 
+
+#define ID3D12GraphicsCommandListPreview_ConvertLinearAlgebraMatrix(This,pDesc,DescCount)	\
+    ( (This)->lpVtbl -> ConvertLinearAlgebraMatrix(This,pDesc,DescCount) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ID3D12GraphicsCommandListPreview_INTERFACE_DEFINED__ */
+
+
 #ifndef __ID3D12DSRDeviceFactory_INTERFACE_DEFINED__
 #define __ID3D12DSRDeviceFactory_INTERFACE_DEFINED__
 
@@ -42040,7 +42711,7 @@ EXTERN_C const IID IID_ID3D12GBVDiagnostics;
 #endif 	/* __ID3D12GBVDiagnostics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_d3d12_0000_0085 */
+/* interface __MIDL_itf_d3d12_0000_0084 */
 /* [local] */ 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_GAMES) */
@@ -42057,7 +42728,6 @@ DEFINE_GUID(IID_ID3D12CommandAllocator,0x6102dee4,0xaf59,0x4b09,0xb9,0x99,0xb4,0
 DEFINE_GUID(IID_ID3D12Fence,0x0a753dcf,0xc4d8,0x4b91,0xad,0xf6,0xbe,0x5a,0x60,0xd9,0x5a,0x76);
 DEFINE_GUID(IID_ID3D12Fence1,0x433685fe,0xe22b,0x4ca0,0xa8,0xdb,0xb5,0xb4,0xf4,0xdd,0x0e,0x4a);
 DEFINE_GUID(IID_ID3D12PipelineState,0x765a30f3,0xf624,0x4c6f,0xa8,0x28,0xac,0xe9,0x48,0x62,0x24,0x45);
-DEFINE_GUID(IID_ID3D12PipelineState1,0x5646804c,0x9638,0x48f7,0x91,0x82,0xb3,0xee,0x5a,0x6b,0x60,0xfb);
 DEFINE_GUID(IID_ID3D12DescriptorHeap,0x8efb471d,0x616c,0x4f49,0x90,0xf7,0x12,0x7b,0xb7,0x63,0xfa,0x51);
 DEFINE_GUID(IID_ID3D12QueryHeap,0x0d9658ae,0xed45,0x469e,0xa6,0x1d,0x97,0x0e,0xc5,0x83,0xca,0xb4);
 DEFINE_GUID(IID_ID3D12CommandSignature,0xc36a797c,0xec80,0x4f0a,0x89,0x85,0xa7,0xb2,0x47,0x50,0x82,0xd1);
@@ -42066,7 +42736,7 @@ DEFINE_GUID(IID_ID3D12GraphicsCommandList,0x5b160d0f,0xac1b,0x4185,0x8b,0xa8,0xb
 DEFINE_GUID(IID_ID3D12GraphicsCommandList1,0x553103fb,0x1fe7,0x4557,0xbb,0x38,0x94,0x6d,0x7d,0x0e,0x7c,0xa7);
 DEFINE_GUID(IID_ID3D12GraphicsCommandList2,0x38C3E585,0xFF17,0x412C,0x91,0x50,0x4F,0xC6,0xF9,0xD7,0x2A,0x28);
 DEFINE_GUID(IID_ID3D12CommandQueue,0x0ec870a6,0x5d7e,0x4c22,0x8c,0xfc,0x5b,0xaa,0xe0,0x76,0x16,0xed);
-DEFINE_GUID(IID_ID3D12CommandQueue1,0x3a3c3165,0x0ee7,0x4b8e,0xa0,0xaf,0x63,0x56,0xb4,0xc3,0xbb,0xb9);
+DEFINE_GUID(IID_ID3D12CommandQueueDynamicPriorityPreview,0x6ae3aa59,0x406b,0x47c6,0xba,0x10,0x70,0x3a,0x6a,0x20,0x54,0xc2);
 DEFINE_GUID(IID_ID3D12Device,0x189819f1,0x1db6,0x4b57,0xbe,0x54,0x18,0x21,0x33,0x9b,0x85,0xf7);
 DEFINE_GUID(IID_ID3D12PipelineLibrary,0xc64226a8,0x9201,0x46af,0xb4,0xcc,0x53,0xfb,0x9f,0xf7,0x41,0x4f);
 DEFINE_GUID(IID_ID3D12PipelineLibrary1,0x80eabf42,0x2568,0x4e5e,0xbd,0x82,0xc3,0x7f,0x86,0x96,0x1d,0xc3);
@@ -42082,8 +42752,8 @@ DEFINE_GUID(IID_ID3D12LifetimeTracker,0x3fd03d36,0x4eb1,0x424a,0xa5,0x82,0x49,0x
 DEFINE_GUID(IID_ID3D12StateObject,0x47016943,0xfca8,0x4594,0x93,0xea,0xaf,0x25,0x8b,0x55,0x34,0x6d);
 DEFINE_GUID(IID_ID3D12StateObjectProperties,0xde5fa827,0x9bf9,0x4f26,0x89,0xff,0xd7,0xf5,0x6f,0xde,0x38,0x60);
 DEFINE_GUID(IID_ID3D12StateObjectProperties1,0x460caac7,0x1d24,0x446a,0xa1,0x84,0xca,0x67,0xdb,0x49,0x41,0x38);
-DEFINE_GUID(IID_ID3D12StateObjectProperties2,0xd5e82917,0xf0f1,0x44cf,0xae,0x5e,0xce,0x22,0x2d,0xd0,0xb8,0x84);
 DEFINE_GUID(IID_ID3D12WorkGraphProperties,0x065acf71,0xf863,0x4b89,0x82,0xf4,0x02,0xe4,0xd5,0x88,0x67,0x57);
+DEFINE_GUID(IID_ID3D12WorkGraphProperties1,0x5490ef66,0x165f,0x4b3f,0x96,0x58,0x74,0xe5,0xc6,0xd2,0xe1,0xd0);
 DEFINE_GUID(IID_ID3D12Device5,0x8b4f173b,0x2fea,0x4b80,0x8f,0x58,0x43,0x07,0x19,0x1a,0xb9,0x5d);
 DEFINE_GUID(IID_ID3D12DeviceRemovedExtendedDataSettings,0x82BC481C,0x6B9B,0x4030,0xAE,0xDB,0x7E,0xE3,0xD1,0xDF,0x1E,0x63);
 DEFINE_GUID(IID_ID3D12DeviceRemovedExtendedDataSettings1,0xDBD5AE51,0x3317,0x4F0A,0xAD,0xF9,0x1D,0x7C,0xED,0xCA,0xAE,0x0B);
@@ -42108,7 +42778,6 @@ DEFINE_GUID(IID_ID3D12Device11,0x5405c344,0xd457,0x444e,0xb4,0xdd,0x23,0x66,0xe4
 DEFINE_GUID(IID_ID3D12Device12,0x5af5c532,0x4c91,0x4cd0,0xb5,0x41,0x15,0xa4,0x05,0x39,0x5f,0xc5);
 DEFINE_GUID(IID_ID3D12Device13,0x14eecffc,0x4df8,0x40f7,0xa1,0x18,0x5c,0x81,0x6f,0x45,0x69,0x5e);
 DEFINE_GUID(IID_ID3D12Device14,0x5f6e592d,0xd895,0x44c2,0x8e,0x4a,0x88,0xad,0x49,0x26,0xd3,0x23);
-DEFINE_GUID(IID_ID3D12StateObjectDatabase,0xc56060b7,0xb5fc,0x4135,0x98,0xe0,0xa1,0xe9,0x99,0x7e,0xac,0xe0);
 DEFINE_GUID(IID_ID3D12VirtualizationGuestDevice,0xbc66d368,0x7373,0x4943,0x87,0x57,0xfc,0x87,0xdc,0x79,0xe4,0x76);
 DEFINE_GUID(IID_ID3D12Tools,0x7071e1f0,0xe84b,0x4b33,0x97,0x4f,0x12,0xfa,0x49,0xde,0x65,0xc5);
 DEFINE_GUID(IID_ID3D12Tools1,0xe4fbc019,0xdd3c,0x43e1,0x8f,0x32,0x7f,0x64,0x95,0x75,0xf0,0xa0);
@@ -42121,19 +42790,20 @@ DEFINE_GUID(IID_ID3D12SDKConfiguration1,0x8aaf9303,0xad25,0x48b9,0x9a,0x57,0xd9,
 DEFINE_GUID(IID_ID3D12DeviceFactory,0x61f307d3,0xd34e,0x4e7c,0x83,0x74,0x3b,0xa4,0xde,0x23,0xcc,0xcb);
 DEFINE_GUID(IID_ID3D12DeviceConfiguration,0x78dbf87b,0xf766,0x422b,0xa6,0x1c,0xc8,0xc4,0x46,0xbd,0xb9,0xad);
 DEFINE_GUID(IID_ID3D12DeviceConfiguration1,0xed342442,0x6343,0x4e16,0xbb,0x82,0xa3,0xa5,0x77,0x87,0x4e,0x56);
-DEFINE_GUID(IID_ID3D12StateObjectDatabaseFactory,0xf5b066f0,0x648a,0x4611,0xbd,0x41,0x27,0xfd,0x09,0x48,0xb9,0xeb);
 DEFINE_GUID(IID_ID3D12GraphicsCommandList5,0x55050859,0x4024,0x474c,0x87,0xf5,0x64,0x72,0xea,0xee,0x44,0xea);
 DEFINE_GUID(IID_ID3D12GraphicsCommandList6,0xc3827890,0xe548,0x4cfa,0x96,0xcf,0x56,0x89,0xa9,0x37,0x0f,0x80);
 DEFINE_GUID(IID_ID3D12GraphicsCommandList7,0xdd171223,0x8b61,0x4769,0x90,0xe3,0x16,0x0c,0xcd,0xe4,0xe2,0xc1);
 DEFINE_GUID(IID_ID3D12GraphicsCommandList8,0xee936ef9,0x599d,0x4d28,0x93,0x8e,0x23,0xc4,0xad,0x05,0xce,0x51);
 DEFINE_GUID(IID_ID3D12GraphicsCommandList9,0x34ed2808,0xffe6,0x4c2b,0xb1,0x1a,0xca,0xbd,0x2b,0x0c,0x59,0xe1);
 DEFINE_GUID(IID_ID3D12GraphicsCommandList10,0x7013c015,0xd161,0x4b63,0xa0,0x8c,0x23,0x85,0x52,0xdd,0x8a,0xcc);
+DEFINE_GUID(IID_ID3D12DevicePreview,0x55ea41d3,0x6bf5,0x4332,0xbb,0xf9,0x90,0x5e,0x6b,0x4e,0x29,0x30);
+DEFINE_GUID(IID_ID3D12GraphicsCommandListPreview,0x536d9bb6,0x9eee,0x4c75,0x86,0xe8,0xe2,0x9e,0x29,0xe0,0x8e,0xd3);
 DEFINE_GUID(IID_ID3D12DSRDeviceFactory,0xf343d1a0,0xafe3,0x439f,0xb1,0x3d,0xcd,0x87,0xa4,0x3b,0x70,0xca);
 DEFINE_GUID(IID_ID3D12GBVDiagnostics,0x597985ab,0x9b75,0x4dbb,0xbe,0x23,0x07,0x61,0x19,0x5b,0xeb,0xee);
 
 
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0084_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 
