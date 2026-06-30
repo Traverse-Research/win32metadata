@@ -1103,6 +1103,8 @@ extern "C"{
 
 #define	D3D12_DS_OUTPUT_REGISTER_COUNT	( 32 )
 
+#define	D3D12_DUMP_FILE_DRIVER_OPTIONS_DEFAULT	( 1 )
+
 #define D3D12_FLOAT16_FUSED_TOLERANCE_IN_ULP	( 0.6 )
 #define D3D12_FLOAT32_MAX	( 3.402823466e+38f )
 #define D3D12_FLOAT32_TO_INTEGER_TOLERANCE_IN_ULP	( 0.6f )
@@ -1455,6 +1457,8 @@ extern "C"{
 #define	D3D12_RESINFO_INSTRUCTION_MISSING_COMPONENT_RETVAL	( 0 )
 
 #define	D3D12_RESOURCE_BARRIER_ALL_SUBRESOURCES	( 0xffffffff )
+
+#define	D3D12_RETAIN_DUMP_FILE_DEFAULT	( 1 )
 
 #define	D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT	( 2 )
 
@@ -47240,7 +47244,7 @@ DEFINE_ENUM_FLAG_OPERATORS( D3D12_DUMP_FILE_DRIVER_OPTIONS )
 typedef struct D3D12_FEATURE_DATA_DUMP_FILE
     {
     /* [annotation] */ 
-    _Out_  BOOL Supported;
+    _Out_  BOOL SupportedByOS;
     /* [annotation] */ 
     _Out_  D3D12_DUMP_FILE_DRIVER_TIER DumpFileDriverTier;
     /* [annotation] */ 
